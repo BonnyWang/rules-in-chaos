@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="mainHolder">
     <welcome> </welcome>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     left: 0;
   }
 
-  div{
+  #mainHolder div{
     position: fixed;
     top:0;
     left: 0;
