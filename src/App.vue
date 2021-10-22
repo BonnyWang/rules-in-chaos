@@ -23,11 +23,17 @@ export default {
     left: 0;
   }
 
-  #mainHolder div{
+  div{
     position: fixed;
     top:0;
     left: 0;
+
+    height: 100%;
+    width: 100%;
+
     z-index: 1;
+
+    background-color: transparent;
   }
 
 </style>
