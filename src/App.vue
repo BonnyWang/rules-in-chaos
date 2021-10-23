@@ -1,6 +1,7 @@
 <template>
   <div id="mainHolder">
     <welcome v-if="showBanner"> </welcome>
+    <button v-if="showButton">Click To show My Work</button>
   </div>
 </template>
 
@@ -14,12 +15,16 @@ export default {
   },
   data:function(){
     return {
-      showBanner: true
+      showBanner: true,
+      showButton: false
     }
   },
   methods:{
     hideBanner:function(){
       this.showBanner = false;
+    },
+    fshowButton:function(){
+      this.showButton = true;
     }
   }
 }
@@ -44,6 +49,16 @@ export default {
     z-index: 1;
 
     background-color: transparent;
+  }
+
+  button{
+    font-size: 30px;
+    background: none;
+    color: red;
+    position: fixed;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
   }
 
 </style>

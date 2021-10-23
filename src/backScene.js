@@ -1,3 +1,4 @@
+import { render } from '@vue/runtime-dom';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
@@ -94,7 +95,10 @@ function loadReal(){
 
         reals[0].position.x = -5;
         reals[1].position.x = 5;
+        
         baseAnimate();
+        loadSorlarSail();
+
 
     }, undefined, function ( error ) {
 
@@ -104,6 +108,19 @@ function loadReal(){
 
 }
 
+
+let solarSail;
+function loadSorlarSail(){
+    const ssLoader = new GLTFLoader();
+    ssLoader.load( '/solarSail.glb', function ( gltf ) {
+        solarSail = gltf.scene;
+
+    }, undefined, function ( error ) {
+
+        console.error( error );
+
+    } );
+}
 
 
 
@@ -175,15 +192,34 @@ function transAnimation(){
 
     if(cutie.rotation.y >= 0.5){
         cancelAnimationFrame(transAnimeID);
+        for (let index = 0; index < asteroids.length; index++) {
+            scene.remove(asteroids[index]);        
+        }
+    
+        for (let index = 0; index < reals.length; index++) {
+            scene.remove(reals[index]);        
+        }
+
+        scene.add(solarSail);
+        solarSail.scale.x = 2;
+        solarSail.scale.y = 2;
+        solarSail.scale.z = 2;
+
+        solarSail.position.x = 2.5;
+        mapp.fshowButton();
+        solarAnimation();
     }
 
-    for (let index = 0; index < asteroids.length; index++) {
-        scene.remove(asteroids[index]);        
-    }
+    
 
-    for (let index = 0; index < reals.length; index++) {
-        scene.remove(reals[index]);        
-    }
+    renderer.render(scene, camera);
+}
+
+let solarAnimID;
+function solarAnimation(){
+    solarAnimID = requestAnimationFrame(solarAnimation);
+    solarSail.rotation.y += 0.01;
+    solarSail.rotation.z += 0.01;
 
     renderer.render(scene, camera);
 }
