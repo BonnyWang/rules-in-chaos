@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import initialzeScene from './backScene';
 
-createApp(App).mount('#app');
+const mapp = createApp(App).mount('#app');
 
+
+// TODO, pass the pointer of the variable to controll
 initialzeScene();
+export default mapp;

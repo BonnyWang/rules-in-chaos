@@ -1,6 +1,6 @@
 <template>
   <div id="mainHolder">
-    <welcome> </welcome>
+    <welcome v-if="showBanner"> </welcome>
   </div>
 </template>
 
@@ -11,6 +11,16 @@ export default {
   name: 'App',
   components: {
     Welcome
+  },
+  data:function(){
+    return {
+      showBanner: true
+    }
+  },
+  methods:{
+    hideBanner:function(){
+      this.showBanner = false;
+    }
   }
 }
 

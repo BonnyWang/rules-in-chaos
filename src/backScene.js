@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
-// import App from './App.vue';
+import mapp from './main';
 
 
 
@@ -156,7 +156,7 @@ function baseAnimate(){
         cancelAnimationFrame(baseAnimeID);
         cancelAnimationFrame(feedDetectID);
         transAnimation();
-        // App.showFeed = false;
+        mapp.hideBanner();
         // console.log(App.showFeed);
     }
 
@@ -167,16 +167,22 @@ let transAnimeID;
 function transAnimation(){
     transAnimeID = requestAnimationFrame(transAnimation);
 
-    cutie.rotation.y +=0.01;
-    cutie.position.x -=0.05;
-    cutie.scale.x -=0.01;
-    cutie.scale.y -=0.01;
-    cutie.scale.z -=0.01;
+    cutie.rotation.y +=0.02;
+    cutie.position.x -=0.3;
+    cutie.position.z -=0.3;
 
     console.log(cutie.rotation.x);
 
-    if(cutie.rotation.y >= 0.45){
+    if(cutie.rotation.y >= 0.5){
         cancelAnimationFrame(transAnimeID);
+    }
+
+    for (let index = 0; index < asteroids.length; index++) {
+        scene.remove(asteroids[index]);        
+    }
+
+    for (let index = 0; index < reals.length; index++) {
+        scene.remove(reals[index]);        
     }
 
     renderer.render(scene, camera);
