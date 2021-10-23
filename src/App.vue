@@ -1,9 +1,13 @@
 <template>
   <div id="mainHolder">
     <welcome v-if="showBanner"> </welcome>
-    <button v-if="showButton" v-on:click="showWorks">Click To show My Work</button>
+    <h2 v-if="showButton">Hi, I'm 博尼</h2>
+    <button v-if="showButton" v-on:click="showWorks">Click To show My Works</button>
     <section v-if="showContent">
-      <img src="/m0.jpg">
+      <img v-if="showIndex == 1" v-on:click="showIndex += 1" src="/m0.jpg">
+      <img v-if="showIndex == 2" v-on:click="showIndex += 1" src="/fuckFinal.jpg">
+      <img v-if="showIndex == 3" v-on:click="showIndex += 1" src="/backKnight.png">
+      <h2 id="caption">Click to View Next One</h2>
     </section>
   </div>
 </template>
@@ -21,7 +25,8 @@ export default {
     return {
       showBanner: true,
       showButton: false,
-      showContent:false
+      showContent:false,
+      showIndex: 0
     }
   },
   methods:{
@@ -33,6 +38,7 @@ export default {
     },
     showWorks:function(){
       this.showContent = true;
+      this.showIndex = 1;
       this.showButton = false;
       solarTumble();
     }
@@ -86,8 +92,23 @@ export default {
   }
 
   img{
-    max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    widows: auto;
+  }
+
+  h2{
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 75%;
+  }
+
+  #caption{
+    position: fixed;
+    left: 75%;
+    top: 80%;
+    white-space: nowrap;
+    display: block;
   }
 
 </style>

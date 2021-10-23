@@ -225,10 +225,23 @@ function solarAnimation(){
     renderer.render(scene, camera);
 }
 
+
+let solarRotatedirection = 1;
 function solarTumble() {
     cancelAnimationFrame(solarAnimID);
+    requestAnimationFrame(solarTumble);
     solarSail.rotation.y = 0;
+
+
+    if(Math.abs(solarSail.rotation.x) > 20.05 || Math.abs(solarSail.rotation.x) < 19.95){
+        solarRotatedirection = solarRotatedirection*-1;
+    }
+
+    solarSail.rotation.x -= 0.01*solarRotatedirection;
+    solarSail.rotation.z += 0.01*solarRotatedirection;
+
     renderer.render(scene, camera);
+
 }
 
 // To controll the user inputs
