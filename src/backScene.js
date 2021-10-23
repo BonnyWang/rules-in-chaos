@@ -4,8 +4,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
 
-
-
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x707070);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -125,7 +123,7 @@ function loadSorlarSail(){
 
 
 
-function initialzeScene(){
+function initializeScene(){
 
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
@@ -205,6 +203,9 @@ function transAnimation(){
         solarSail.scale.y = 2;
         solarSail.scale.z = 2;
 
+        solarSail.rotation.x = 20;
+        console.log(solarSail.rotation.y);
+
         solarSail.position.x = 2.5;
         mapp.fshowButton();
         solarAnimation();
@@ -218,9 +219,15 @@ function transAnimation(){
 let solarAnimID;
 function solarAnimation(){
     solarAnimID = requestAnimationFrame(solarAnimation);
+    // solarSail.rotation.y += 0.01;
     solarSail.rotation.y += 0.01;
-    solarSail.rotation.z += 0.01;
 
+    renderer.render(scene, camera);
+}
+
+function solarTumble() {
+    cancelAnimationFrame(solarAnimID);
+    solarSail.rotation.y = 0;
     renderer.render(scene, camera);
 }
 
@@ -279,4 +286,5 @@ window.requestAnimationFrame(feedDetect);
 
 
 
-export default initialzeScene; 
+export default initializeScene; 
+export {solarTumble};
