@@ -1,6 +1,10 @@
 <template>
   <div id="mainHolder">
     <welcome v-if="showBanner"> </welcome>
+    <audio ref="mbgm" controls autoplay loop hidden="true">
+      <source src="/bgm.wav">
+    Your browser does not support the audio element.
+    </audio>
     <h2 v-if="showButton">Hi, I'm 博尼</h2>
     <button v-if="showButton" v-on:click="showWorks">Click To show My Works</button>
     <section v-if="showContent">
@@ -37,11 +41,19 @@ export default {
       this.showButton = true;
     },
     showWorks:function(){
+      this.playMusic();
+
       this.showContent = true;
       this.showIndex = 1;
       this.showButton = false;
       solarTumble();
+    },
+    playMusic:function(){
+      this.$refs.mbgm.play();
     }
+  },
+  mounted(){
+    this.playMusic()
   }
 }
 
