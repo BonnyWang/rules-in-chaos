@@ -1,11 +1,10 @@
-import { render } from '@vue/runtime-dom';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x707070);
+scene.background = new THREE.Color(0x010101);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({alpha: true});
 
@@ -15,7 +14,9 @@ const cube = new THREE.Mesh( geometry, material );
 // scene.add( cube );  
 
 const light0 = new THREE.AmbientLight(0xffffff, 0.75);
-const light1 = new THREE.PointLight(0xff0000, 2,10);
+const light1 = new THREE.PointLight(0xffffff, 110,10);
+
+light1.position.z = 10;
 scene.add(light0);
 scene.add(light1);
 
@@ -119,8 +120,54 @@ function loadSorlarSail(){
 
     } );
 }
+let asteroidBonny;
+let mixer;
+function loadAsteroidBonny(){
+    const ssLoader = new GLTFLoader();
+    ssLoader.load( '/asteroidBonny.glb', function ( gltf ) {
+        asteroidBonny =  gltf.scene;
+        asteroidBonny.scale.x = 3;
+        asteroidBonny.scale.y = 3;
+        asteroidBonny.scale.z = 3;
+        scene.add(asteroidBonny);
+        asteroidBonny.rotation.y -= 0.8;
+        asteroidBonny.rotation.z += 0.1;
+
+        console.log(asteroidBonny);
+        
+
+        mixer = new THREE.AnimationMixer( gltf.scene );
+        
+        gltf.animations.forEach( ( clip ) => {
+          
+            mixer.clipAction( clip ).play();
+          
+        } );
 
 
+        animeBonnyAsteroid();
+
+
+    }, undefined, function ( error ) {
+
+        console.error( error );
+
+    } );
+}
+
+let clock = new THREE.Clock();
+function animeBonnyAsteroid(){
+    requestAnimationFrame(animeBonnyAsteroid);
+
+    var delta = clock.getDelta();
+    asteroidBonny.position.y += 0.01;
+    if(asteroidBonny.position.y > 2){
+        asteroidBonny.position.y -= 0.01;
+    }
+  
+    if ( mixer ) mixer.update( delta );
+    renderer.render(scene,camera);
+}
 
 
 function initializeScene(){
@@ -131,7 +178,8 @@ function initializeScene(){
     renderer.render(scene, camera);
     camera.position.z = 5;
 
-    loadCutie();
+    loadAsteroidBonny();
+    // loadCutie();
 }
 
 

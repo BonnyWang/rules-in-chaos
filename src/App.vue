@@ -12,27 +12,23 @@
       <h3 v-if="showIndex == 1">Monster Model</h3>
       <img v-if="showIndex == 2" v-on:click="showIndex += 1" src="/fuckFinal.jpg">
       <h3 v-if="showIndex == 2">Selfie Combo</h3>
-      <img v-if="showIndex == 3" v-on:click="showIndex += 1" src="/selfie1.jpg">
-      <h3 v-if="showIndex == 3">Selfie Permutation 1</h3>
-      <img v-if="showIndex == 4" v-on:click="showIndex += 1" src="/selfie2.jpg">
-      <h3 v-if="showIndex == 4">Selfie Permutation 2</h3>
-      <img v-if="showIndex == 5" v-on:click="showIndex += 1" src="/selfie3.jpg">
-      <h3 v-if="showIndex == 5">Selfie Permutation 3</h3>
-      <img v-if="showIndex == 6" v-on:click="showIndex += 1" src="/backKnight.png">
-      <h3 v-if="showIndex == 6">River Knight</h3>
-      <img v-if="showIndex == 7" v-on:click="showIndex += 1" src="/knightCombo.jpg">
-      <h3 v-if="showIndex == 7">River Knight Combo</h3>
-      <img v-if="showIndex == 8" v-on:click="showIndex += 1" src="/wth.jpg">
-      <h3 v-if="showIndex == 8">Robot</h3>
-      <img v-if="showIndex == 9" v-on:click="showIndex += 1" src="chaos.jpg"/>
-      <h3 v-if="showIndex == 9">Chaos</h3>
+      <img v-if="showIndex == 3" v-on:click="showIndex += 1" src="/selfie2.jpg">
+      <h3 v-if="showIndex == 3">Selfie Permutation 2</h3>
+      <img v-if="showIndex == 4" v-on:click="showIndex += 1" src="/backKnight.png">
+      <h3 v-if="showIndex == 4">River Knight</h3>
+      <img v-if="showIndex == 5" v-on:click="showIndex += 1" src="/knightCombo.jpg">
+      <h3 v-if="showIndex == 5">River Knight Combo</h3>
+      <img v-if="showIndex == 6" v-on:click="showIndex += 1" src="/wth.jpg">
+      <h3 v-if="showIndex == 6">Robot</h3>
+      <img v-if="showIndex == 7" v-on:click="showIndex += 1" src="chaos.jpg"/>
+      <h3 v-if="showIndex == 7">Chaos</h3>
 
-      <section v-if="showIndex == 10">
+      <section v-if="showIndex == 8">
         <a href="http://bonnywang.com/spacePersona/">http://bonnywang.com/spacePersona/</a>
         <a href ="http://47.101.41.6/sky_observer_20210828/">http://47.101.41.6/sky_observer_20210828/</a>
         <h3>Ohter games made by Unity...</h3>
       </section>1
-      <h2 v-if="showIndex != 10" id="caption">Click to View Next One</h2>
+      <h2 v-if="showIndex != 8" id="caption">Click to View Next One</h2>
     </section>
   </div>
 </template>
