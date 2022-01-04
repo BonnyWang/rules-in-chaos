@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import mapp from './main';
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x010101);
+scene.background = new THREE.Color(0x121212);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({alpha: true});
 
