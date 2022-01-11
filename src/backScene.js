@@ -8,23 +8,59 @@ scene.background = new THREE.Color(0x121212);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({alpha: true});
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );  
 
 const light0 = new THREE.AmbientLight(0xffffff, 0.75);
 const light1 = new THREE.PointLight(0xffffff, 110,10);
 
 light1.position.z = 10;
-scene.add(light0);
+// scene.add(light0);
 scene.add(light1);
 
 
 light1.castShadow = true;
 
 
+//Handle Scene resizing
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
 
+window.addEventListener('resize', () =>
+{
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+// Add stars at the background
+const particlesCount = 200;
+const positions = new Float32Array(particlesCount*3);
+
+for(let i = 0; i < particlesCount; i++){
+    positions[i * 3 + 0] = (Math.random() - 0.5) * 10
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 10
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 10
+}
+
+const particlesMaterial = new THREE.PointsMaterial({
+    color: '#212121',
+    sizeAttenuation: true,
+    size: 0.25
+})
+
+const particlesGeometry = new THREE.BufferGeometry();
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles)
 
 // Load Models
 let cutie;
@@ -33,6 +69,7 @@ function loadCutie(){
     loader.load( '/cute.glb', function ( gltf ) {
 
         cutie = gltf.scene;
+        cutie.position.z = -5;
         scene.add( cutie );
 
         loadAsteroids();
@@ -126,9 +163,9 @@ function loadAsteroidBonny(){
     const ssLoader = new GLTFLoader();
     ssLoader.load( '/asteroidBonny.glb', function ( gltf ) {
         asteroidBonny =  gltf.scene;
-        asteroidBonny.scale.x = 3;
-        asteroidBonny.scale.y = 3;
-        asteroidBonny.scale.z = 3;
+        asteroidBonny.scale.x = 1;
+        asteroidBonny.scale.y = 1;
+        asteroidBonny.scale.z = 1;
         scene.add(asteroidBonny);
         asteroidBonny.rotation.y -= 0.8;
         asteroidBonny.rotation.z += 0.1;
@@ -159,6 +196,7 @@ let clock = new THREE.Clock();
 function animeBonnyAsteroid(){
     requestAnimationFrame(animeBonnyAsteroid);
 
+    asteroidBonny.rotation.y += 0.01;
     var delta = clock.getDelta();
     asteroidBonny.position.y += 0.01;
     if(asteroidBonny.position.y > 2){
@@ -179,7 +217,7 @@ function initializeScene(){
     camera.position.z = 5;
 
     loadAsteroidBonny();
-    // loadCutie();
+    loadCutie();
 }
 
 
@@ -189,9 +227,6 @@ let baseAnimeID;
 
 function baseAnimate(){
     baseAnimeID = requestAnimationFrame(baseAnimate);
-
-    cube.rotation.z += 0.01;
-    cube.rotation.x += 0.01;
 
     // cutie.rotation.y +=0.01;
 
@@ -296,11 +331,28 @@ function solarTumble() {
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
+window.addEventListener( 'mousemove', onMouseMove);
 
 function onMouseMove( event ) {
 
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+	mouse.x = ( event.clientX / window.innerWidth )-0.5;
+	mouse.y = ( event.clientY / window.innerHeight )-0.5;
+
+
+}
+
+
+function baseAnimation(){
+    requestAnimationFrame(baseAnimation);
+
+    // Create parallax effect
+    const parallax = {};
+    parallax.x = mouse.x;
+    parallax.y = - mouse.y;
+
+    const damping = 0.05;
+    camera.position.x += (parallax.x - camera.position.x)*damping;
+    camera.position.y += (parallax.y - camera.position.y)*damping;
 
 }
 
@@ -341,11 +393,12 @@ function feedDetect() {
 }
 
 
-window.addEventListener( 'mousemove', onMouseMove, false );
+
+
 
 window.requestAnimationFrame(feedDetect);
 
-
+baseAnimation();
 
 export default initializeScene; 
 export {solarTumble};

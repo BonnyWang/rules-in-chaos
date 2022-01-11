@@ -1,6 +1,6 @@
 <template>
   <div id="welcome" style="background-color: transparent">
-      <h1>Feed the Monster with the Stones</h1>
+      <h1>View my works</h1>
   </div>
 </template>
 
