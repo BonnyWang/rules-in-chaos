@@ -66,13 +66,16 @@ scene.add(particles)
 let cutie;
 function loadCutie(){
     const loader = new GLTFLoader();
-    loader.load( '/cute.glb', function ( gltf ) {
+    loader.load( '/cutie.glb', function ( gltf ) {
 
         cutie = gltf.scene;
-        cutie.position.z = -5;
+        cutie.position.z = -1;
+        cutie.scale.x = 0.4;
+        cutie.scale.y = 0.4;
+        cutie.scale.z = 0.4;
         scene.add( cutie );
 
-        loadAsteroids();
+        // loadAsteroids();
         loadReal();
 
 
