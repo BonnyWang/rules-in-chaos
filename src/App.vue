@@ -84,18 +84,18 @@ export default {
   }
 
   div{
-    position: fixed;
+    position: relative;
     top:0;
     left: 0;
 
-    height: 100%;
+    height: 200%;
     width: 100%;
 
     z-index: 1;
 
     background-color: transparent;
   }
-
+/*
   button{
     font-size: 30px;
     background: none;
@@ -121,12 +121,6 @@ export default {
     height: 50%;
   }
 
-  img{
-    /* display: inline-block; */
-    max-height: 100%;
-    widows: auto;
-  }
-
   h2{
     color: white;
     position: fixed;
@@ -145,6 +139,6 @@ export default {
     
     color: white;
     font-family: 'Courier New', Courier, monospace;
-  }
+  } */
 
 </style>

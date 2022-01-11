@@ -340,9 +340,17 @@ function onMouseMove( event ) {
 
 	mouse.x = ( event.clientX / window.innerWidth )-0.5;
 	mouse.y = ( event.clientY / window.innerHeight )-0.5;
-
-
 }
+
+
+let scrollY = 0;
+window.addEventListener('scroll', () =>
+{
+    scrollY = window.scrollY
+
+    console.log(scrollY)
+})
+
 
 
 function baseAnimation(){
@@ -356,6 +364,8 @@ function baseAnimation(){
     const damping = 0.05;
     camera.position.x += (parallax.x - camera.position.x)*damping;
     camera.position.y += (parallax.y - camera.position.y)*damping;
+
+    camera.position.y = - scrollY / sizes.height;
 
 }
 
@@ -394,9 +404,6 @@ function feedDetect() {
 	renderer.render( scene, camera );
 
 }
-
-
-
 
 
 window.requestAnimationFrame(feedDetect);
