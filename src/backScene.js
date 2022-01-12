@@ -363,6 +363,7 @@ window.addEventListener('scroll', () =>
     console.log(scrollY)
 })
 
+// TODO: this need to be animation which cancel itself to call
 function particleMove(){
     for (let index = 0; index < particlesCount; index++) {
         console.log(particles.geometry);
