@@ -255,9 +255,16 @@ function onMouseMove( event ) {
 
 
 let scrollY = 0;
-window.addEventListener('scroll', () =>
-{
-    scrollY = window.scrollY
+let changedSection = false;
+window.addEventListener('scroll', () =>{
+    scrollY = window.scrollY;
+
+    const section = Math.round(scrollY / sizes.height)
+
+    if(section == 1 && !changedSection){
+        changedSection = true;
+        toMain();
+    }
 
 })
 
@@ -288,7 +295,7 @@ function baseAnimation(){
     camera.position.x += (parallax.x - camera.position.x)*damping;
     camera.position.y += (parallax.y - camera.position.y)*damping;
 
-    cameraGroup.position.y = - scrollY / sizes.height;
+    cameraGroup.position.y = - scrollY*3 / sizes.height;
 
     //particleMove();
 
@@ -302,6 +309,8 @@ function baseAnimation(){
 
 function toMain(){
     scene.remove(asteroidBonny);
+    scene.remove(reals[0]);
+    scene.remove(reals[1]);
     scene.add(asteroidFraction);
     mainTransition();
 }
@@ -310,6 +319,7 @@ function toMain(){
 let mainTransID;
 let expand = 1;
 let expandSpeed = 0.05;
+let CutieMove = 1;
 function mainTransition(){
     mainTransID= requestAnimationFrame(mainTransition);
 
@@ -317,6 +327,14 @@ function mainTransition(){
     asteroidFraction.scale.x +=expandSpeed*expand;
     asteroidFraction.scale.y +=expandSpeed*expand;
     asteroidFraction.scale.z +=expandSpeed*expand;
+
+    cutie.position.x -= 0.02*CutieMove;
+    cutie.position.y -= 0.01*CutieMove;
+    cutie.rotation.y += 0.005*CutieMove;
+    
+    if(cutie.position.x < -5){
+        CutieMove = 0;
+    }
 
     if(expand == 1 && asteroidFraction.scale.x > 2){
         expand = -1;

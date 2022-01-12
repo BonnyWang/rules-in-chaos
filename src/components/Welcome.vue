@@ -1,6 +1,6 @@
 <template>
   <div id="welcome" style="background-color: transparent">
-      <section >
+      <section v-if="firstEnter">
         <button id="Enter" v-on:click="toMyWorld">↓ Enter My World ↓ </button>
     </section>
       
@@ -17,11 +17,19 @@
 import {toMain} from '../backScene.js'
 export default {
     name: "Welcome",
+    data() {
+        return {
+            firstEnter: true
+        }
+    },
     methods:{
         toMyWorld(){
             const mainView = document.getElementById('mainView');
             mainView.scrollIntoView({ behavior: 'smooth' });
             toMain();
+        },
+        hideEntrance(){
+            this.firstEnter = false;
         }
     }
 
