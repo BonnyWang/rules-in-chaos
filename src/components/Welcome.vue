@@ -14,12 +14,14 @@
 </template>
 
 <script>
+import {toMain} from '../backScene.js'
 export default {
     name: "Welcome",
     methods:{
         toMyWorld(){
             const mainView = document.getElementById('mainView');
             mainView.scrollIntoView({ behavior: 'smooth' });
+            toMain();
         }
     }
 

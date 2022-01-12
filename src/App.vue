@@ -35,7 +35,6 @@
 
 <script>
 import Welcome from './components/Welcome.vue';
-import {solarTumble} from './backScene.js'
 
 export default {
   name: 'App',
@@ -63,7 +62,6 @@ export default {
       this.showContent = true;
       this.showIndex = 1;
       this.showButton = false;
-      solarTumble();
     },
     playMusic:function(){
       this.$refs.mbgm.play();

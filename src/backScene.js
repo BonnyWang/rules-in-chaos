@@ -18,7 +18,7 @@ const light0 = new THREE.AmbientLight(0xffffff, 0.75);
 const light1 = new THREE.PointLight(0xffffff, 110,10);
 
 light1.position.z = 10;
-// scene.add(light0);
+scene.add(light0);
 scene.add(light1);
 
 
@@ -59,7 +59,7 @@ for(let i = 0; i < particlesCount; i++){
 const particlesMaterial = new THREE.PointsMaterial({
     color: '#212121',
     sizeAttenuation: true,
-    size: 0.05
+    size: 0.1
 })
 
 const particlesGeometry = new THREE.BufferGeometry();
@@ -80,7 +80,6 @@ function loadCutie(){
         cutie.scale.z = 0.4;
         scene.add( cutie );
 
-        // loadAsteroids();
         loadReal();
 
 
@@ -91,38 +90,6 @@ function loadCutie(){
     } );
 }
 
-
-
-// Load Asteroids
-let asteroids = [];
-const asteroids_Name = ['/asteroid0.glb','/asteroid1.glb','/fakeAsteroid.glb']
-
-function loadAsteroids(){
-    
-    let loaders = [];
-
-    for (let i = 0; i < asteroids_Name.length; i++){
-        loaders[i] = new GLTFLoader();
-        loaders[i].load( asteroids_Name[i], function ( gltf ) {
-
-            asteroids[i] = gltf.scene;
-            scene.add( asteroids[i]);
-            
-            asteroids[i].position.z = (i+1)*3-6;
-            asteroids[i].position.y = -0.1;
-            
-
-            asteroids[i].position.x = (i+1)*3-6 ;
-
-            
-        }, undefined, function ( error ) {
-        
-            console.error( error );
-        
-        } );
-    }
-
-}
 
 
 // Load The RealAsteroid on the side
@@ -144,7 +111,6 @@ function loadReal(){
         reals[1].position.x = 5;
         
         baseAnimate();
-        loadSorlarSail();
 
 
     }, undefined, function ( error ) {
@@ -156,18 +122,6 @@ function loadReal(){
 }
 
 
-let solarSail;
-function loadSorlarSail(){
-    const ssLoader = new GLTFLoader();
-    ssLoader.load( '/solarSail.glb', function ( gltf ) {
-        solarSail = gltf.scene;
-
-    }, undefined, function ( error ) {
-
-        console.error( error );
-
-    } );
-}
 let asteroidBonny;
 let mixer;
 function loadAsteroidBonny(){
@@ -204,6 +158,28 @@ function loadAsteroidBonny(){
     } );
 }
 
+let asteroidFraction;
+
+function loadFraction(){
+    const loader = new GLTFLoader();
+    loader.load( '/asteroidBonnyFraction.glb', function ( gltf ) {
+        asteroidFraction = gltf.scene;
+        asteroidFraction.scale.x =0.2;
+        asteroidFraction.scale.y =0.2;
+        asteroidFraction.scale.z =0.2;
+
+        asteroidFraction.position.y = 2;
+
+
+    }, undefined, function ( error ) {
+
+        console.error( error );
+
+    } );
+}
+
+
+
 let clock = new THREE.Clock();
 let animBonnyID;
 function animeBonnyAsteroid(){
@@ -231,6 +207,7 @@ function initializeScene(){
 
     loadAsteroidBonny();
     loadCutie();
+    loadFraction();
 }
 
 
@@ -243,19 +220,6 @@ function baseAnimate(){
 
     // cutie.rotation.y +=0.01;
 
-    // Asteroids animation
-
-    
-
-    for(let i = 0; i < asteroids.length; i++){
-        if(Math.abs(asteroids[i].position.z) > 4 ){
-            direction[i] = direction[i] *-1;
-        }
-        asteroids[i].position.z +=0.01*direction[i];
-        asteroids[i].position.y = Math.cos(asteroids[i].position.z*3);
-        asteroids[i].rotation.x += 0.1;
-    }
-
     reals[0].rotation.x += 0.1;
     reals[0].rotation.z += 0.1;
     reals[1].rotation.x -= 0.1;
@@ -266,7 +230,6 @@ function baseAnimate(){
     if(reals[0].position.x > 0){
         cancelAnimationFrame(baseAnimeID);
         cancelAnimationFrame(feedDetectID);
-        transAnimation();
         mapp.hideBanner();
         // console.log(App.showFeed);
     }
@@ -274,71 +237,7 @@ function baseAnimate(){
 
 }
 
-let transAnimeID;
-function transAnimation(){
-    transAnimeID = requestAnimationFrame(transAnimation);
 
-    cutie.rotation.y +=0.02;
-    cutie.position.x -=0.3;
-    cutie.position.z -=0.3;
-
-    console.log(cutie.rotation.x);
-
-    if(cutie.rotation.y >= 0.5){
-        cancelAnimationFrame(transAnimeID);
-        for (let index = 0; index < asteroids.length; index++) {
-            scene.remove(asteroids[index]);        
-        }
-    
-        for (let index = 0; index < reals.length; index++) {
-            scene.remove(reals[index]);        
-        }
-
-        scene.add(solarSail);
-        solarSail.scale.x = 2;
-        solarSail.scale.y = 2;
-        solarSail.scale.z = 2;
-
-        solarSail.rotation.x = 20;
-        console.log(solarSail.rotation.y);
-
-        solarSail.position.x = 2.5;
-        mapp.fshowButton();
-        solarAnimation();
-    }
-
-    
-
-    renderer.render(scene, camera);
-}
-
-let solarAnimID;
-function solarAnimation(){
-    solarAnimID = requestAnimationFrame(solarAnimation);
-    // solarSail.rotation.y += 0.01;
-    solarSail.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-}
-
-
-let solarRotatedirection = 1;
-function solarTumble() {
-    cancelAnimationFrame(solarAnimID);
-    requestAnimationFrame(solarTumble);
-    solarSail.rotation.y = 0;
-
-
-    if(Math.abs(solarSail.rotation.x) > 20.05 || Math.abs(solarSail.rotation.x) < 19.95){
-        solarRotatedirection = solarRotatedirection*-1;
-    }
-
-    solarSail.rotation.x -= 0.01*solarRotatedirection;
-    solarSail.rotation.z += 0.01*solarRotatedirection;
-
-    renderer.render(scene, camera);
-
-}
 
 // To controll the user inputs
 
@@ -360,7 +259,6 @@ window.addEventListener('scroll', () =>
 {
     scrollY = window.scrollY
 
-    console.log(scrollY)
 })
 
 // TODO: this need to be animation which cancel itself to call
@@ -398,6 +296,48 @@ function baseAnimation(){
 
 }
 
+
+
+
+
+function toMain(){
+    scene.remove(asteroidBonny);
+    scene.add(asteroidFraction);
+    mainTransition();
+}
+
+
+let mainTransID;
+let expand = 1;
+let expandSpeed = 0.05;
+function mainTransition(){
+    mainTransID= requestAnimationFrame(mainTransition);
+
+    expandSpeed -= 0.0005;
+    asteroidFraction.scale.x +=expandSpeed*expand;
+    asteroidFraction.scale.y +=expandSpeed*expand;
+    asteroidFraction.scale.z +=expandSpeed*expand;
+
+    if(expand == 1 && asteroidFraction.scale.x > 2){
+        expand = -1;
+    }
+
+    if(expand == -1){
+        asteroidFraction.position.x -=0.15;
+        if(asteroidFraction.scale.x > 500){
+            fractionBaseAnim();
+            cancelAnimationFrame(mainTransID);
+        }
+    }
+
+    console.log(asteroidFraction.scale.x);
+
+}
+
+function fractionBaseAnim(){
+    requestAnimationFrame(fractionBaseAnim);
+    asteroidFraction.rotation.y += 0.0001;
+}
 
 let feedDetectID;
 
@@ -439,4 +379,4 @@ window.requestAnimationFrame(feedDetect);
 
 
 export default initializeScene; 
-export {solarTumble};
+export {toMain};
