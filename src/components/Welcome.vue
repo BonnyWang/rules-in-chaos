@@ -1,10 +1,10 @@
 <template>
   <div id="welcome" style="background-color: transparent">
-      <section class="section">
-        <h1 id="Enter">↓ Enter My World ↓ </h1>
+      <section >
+        <button id="Enter" v-on:click="toMyWorld">↓ Enter My World ↓ </button>
     </section>
       
-    <section class="section">
+    <section id="mainView">
         <h1>My Portfolio</h1>
     </section>
   </div>
@@ -12,14 +12,19 @@
 
 <script>
 export default {
-    name: "Welcome"
+    name: "Welcome",
+    methods:{
+        toMyWorld(){
+            const mainView = document.getElementById('mainView');
+            mainView.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
 }
 </script>
 
 <style scoped>
-    .section
-    {
+    section{
         display: flex;
         align-items: center;
         height: 100vh;
@@ -39,7 +44,17 @@ export default {
     }
     
    #Enter{
-       margin-top: 200px;
+        background: none;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        border: none;
+        font-size: 30px;
+        margin-top: 200px;
+        padding: 10px;
+   }
+
+   #Enter:hover{
+       border-bottom: white 1px solid;
    }
 
 </style>

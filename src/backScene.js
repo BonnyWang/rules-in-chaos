@@ -386,13 +386,13 @@ function baseAnimation(){
     parallax.x = mouse.x;
     parallax.y = - mouse.y;
 
-    const damping = 0.05;
+    const damping = 0.02;
     camera.position.x += (parallax.x - camera.position.x)*damping;
     camera.position.y += (parallax.y - camera.position.y)*damping;
 
     cameraGroup.position.y = - scrollY / sizes.height;
 
-    particleMove();
+    //particleMove();
 
     renderer.render(scene,camera);
 
