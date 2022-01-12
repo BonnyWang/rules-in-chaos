@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { Vector3 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
@@ -8,6 +9,10 @@ scene.background = new THREE.Color(0x121212);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer({alpha: true});
 
+// Wrap the camera to more flexible control
+const cameraGroup = new THREE.Group();
+scene.add(cameraGroup);
+cameraGroup.add(camera);
 
 const light0 = new THREE.AmbientLight(0xffffff, 0.75);
 const light1 = new THREE.PointLight(0xffffff, 110,10);
@@ -54,7 +59,7 @@ for(let i = 0; i < particlesCount; i++){
 const particlesMaterial = new THREE.PointsMaterial({
     color: '#212121',
     sizeAttenuation: true,
-    size: 0.25
+    size: 0.05
 })
 
 const particlesGeometry = new THREE.BufferGeometry();
@@ -127,6 +132,9 @@ function loadReal(){
     const real_Loader = new GLTFLoader();
     real_Loader.load( '/realAsteroid.glb', function ( gltf ) {
 
+        gltf.scene.scale.x = 0.5;
+        gltf.scene.scale.y = 0.5;
+        gltf.scene.scale.z = 0.5;
         reals[0] = gltf.scene;
         reals[1] = gltf.scene.clone();
         scene.add( reals[0]);
@@ -186,6 +194,7 @@ function loadAsteroidBonny(){
 
 
         animeBonnyAsteroid();
+        baseAnimation();
 
 
     }, undefined, function ( error ) {
@@ -196,14 +205,15 @@ function loadAsteroidBonny(){
 }
 
 let clock = new THREE.Clock();
+let animBonnyID;
 function animeBonnyAsteroid(){
-    requestAnimationFrame(animeBonnyAsteroid);
+    animBonnyID = requestAnimationFrame(animeBonnyAsteroid);
 
     asteroidBonny.rotation.y += 0.01;
     var delta = clock.getDelta();
     asteroidBonny.position.y += 0.01;
     if(asteroidBonny.position.y > 2){
-        asteroidBonny.position.y -= 0.01;
+        cancelAnimationFrame(animBonnyID);
     }
   
     if ( mixer ) mixer.update( delta );
@@ -334,12 +344,14 @@ function solarTumble() {
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
+
 window.addEventListener( 'mousemove', onMouseMove);
 
 function onMouseMove( event ) {
 
 	mouse.x = ( event.clientX / window.innerWidth )-0.5;
 	mouse.y = ( event.clientY / window.innerHeight )-0.5;
+    
 }
 
 
@@ -351,12 +363,24 @@ window.addEventListener('scroll', () =>
     console.log(scrollY)
 })
 
+function particleMove(){
+    for (let index = 0; index < particlesCount; index++) {
+        console.log(particles.geometry);
+        const particlePositions = particles.geometry.attributes.position.array;
+        // particlePositions[index*3] += 0.01; 
+        particlePositions[index*3+2] += 0.1; 
+        particles.geometry.attributes.position.needsUpdate = true;
 
+    }
+}
 
 function baseAnimation(){
     requestAnimationFrame(baseAnimation);
 
+    asteroidBonny.rotation.y += 0.01;
     // Create parallax effect
+
+    
     const parallax = {};
     parallax.x = mouse.x;
     parallax.y = - mouse.y;
@@ -365,7 +389,11 @@ function baseAnimation(){
     camera.position.x += (parallax.x - camera.position.x)*damping;
     camera.position.y += (parallax.y - camera.position.y)*damping;
 
-    camera.position.y = - scrollY / sizes.height;
+    cameraGroup.position.y = - scrollY / sizes.height;
+
+    particleMove();
+
+    renderer.render(scene,camera);
 
 }
 
@@ -408,7 +436,6 @@ function feedDetect() {
 
 window.requestAnimationFrame(feedDetect);
 
-baseAnimation();
 
 export default initializeScene; 
 export {solarTumble};
