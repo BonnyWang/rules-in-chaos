@@ -5,7 +5,10 @@
     </section>
       
     <section id="mainView">
-        <h1>My Portfolio</h1>
+        <h1 id="siteTitle">Hello, I'm Bonny</h1>
+        <span>
+            <button id="Navigation">Gallery</button>
+        </span>
     </section>
   </div>
 </template>
@@ -55,6 +58,28 @@ export default {
 
    #Enter:hover{
        border-bottom: white 1px solid;
+   }
+
+    #mainView{
+        display: block;    
+        
+    }
+
+    #siteTitle{
+       padding-top: 200px;
+    }
+
+   #Navigation{
+        background: none;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        border: none;
+        font-size: 30px;
+        padding: 10px;
+   }
+
+   #Navigation:hover{
+       border-left: white 1px solid;
    }
 
 </style>
