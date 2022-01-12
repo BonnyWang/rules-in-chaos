@@ -9,6 +9,7 @@
         <span>
             <button id="Navigation">Gallery</button>
         </span>
+        <router-view />
     </section>
     <audio ref="mbgm" controls autoplay loop hidden="true">
       <source src="/bgm.wav">

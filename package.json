@@ -10,7 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "three": "^0.133.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -33,7 +34,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": { "no-unused-vars": "off"}
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",
