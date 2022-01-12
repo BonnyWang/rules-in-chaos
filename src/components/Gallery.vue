@@ -1,6 +1,6 @@
 <template>
     <span>
-        <h1>Gallery</h1>
+        <img src=" /wth.jpg" thum alt="">
     </span>
 </template>
 
@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style>
+img{
+    width: 200px;
+}
 
 </style>

@@ -1,13 +1,15 @@
 <template>
   <div id="mainHolder">
-    <section v-if="firstEnter">
+    <section id="Welcome" v-if="firstEnter">
         <button id="Enter" v-on:click="toMyWorld">↓ Enter My World ↓ </button>
     </section>
       
     <section id="mainView">
         <h1 id="siteTitle">Hello, I'm Bonny</h1>
-        <span>
-            <button id="Navigation">Gallery</button>
+        <span id="Navigation">
+            <button id="NavButton">About Me</button>
+            <button id="NavButton">Project</button>
+            <button id="NavButton">Gallery</button>
         </span>
         <router-view />
     </section>
@@ -88,8 +90,7 @@ export default {
     padding-right: 10%;
   }
 
-    /* Alternate direction between sections */
-  section:nth-child(odd)
+  #Welcome
   {
     justify-content: flex-end;
   }
@@ -109,15 +110,24 @@ export default {
   }
 
   #mainView{
-    display: block;    
+    height: 100%;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 30% 70%;    
       
+  }
+
+  #Navigation{
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
   #siteTitle{
     padding-top: 200px;
   }
 
-  #Navigation{
+  #NavButton{
+    display: block;
     background: none;
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -126,7 +136,7 @@ export default {
     padding: 10px;
   }
 
-  #Navigation:hover{
+  #NavButton:hover{
     border-left: white 1px solid;
   }
 
