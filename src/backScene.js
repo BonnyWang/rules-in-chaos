@@ -230,7 +230,6 @@ function baseAnimate(){
     if(reals[0].position.x > 0){
         cancelAnimationFrame(baseAnimeID);
         cancelAnimationFrame(feedDetectID);
-        mapp.hideBanner();
         // console.log(App.showFeed);
     }
 
@@ -256,13 +255,20 @@ function onMouseMove( event ) {
 
 let scrollY = 0;
 let changedSection = false;
+
+// Make sure to top when first enter 
+
 window.addEventListener('scroll', () =>{
     scrollY = window.scrollY;
 
-    const section = Math.round(scrollY / sizes.height)
+    const section = Math.round(scrollY / (sizes.height+50))
+
+    console.log(scrollY + " " + sizes.height); 
 
     if(section == 1 && !changedSection){
         changedSection = true;
+
+        mapp.hideEntrance();
         toMain();
     }
 
@@ -271,7 +277,6 @@ window.addEventListener('scroll', () =>{
 // TODO: this need to be animation which cancel itself to call
 function particleMove(){
     for (let index = 0; index < particlesCount; index++) {
-        console.log(particles.geometry);
         const particlePositions = particles.geometry.attributes.position.array;
         // particlePositions[index*3] += 0.01; 
         particlePositions[index*3+2] += 0.1; 
@@ -312,6 +317,7 @@ function toMain(){
     scene.remove(reals[0]);
     scene.remove(reals[1]);
     scene.add(asteroidFraction);
+
     mainTransition();
 }
 
@@ -348,7 +354,6 @@ function mainTransition(){
         }
     }
 
-    console.log(asteroidFraction.scale.x);
 
 }
 
