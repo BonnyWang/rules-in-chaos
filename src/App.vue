@@ -7,7 +7,7 @@
     <section id="mainView">
         
         <span id="Navigation">
-          <h1 id="siteTitle">Hello, I'm Bonny</h1>
+          <h1 id="siteTitle">Welcome</h1>
             <button v-on:click="this.$router.push('/AboutMe');" id="NavButton">About Me</button>
             <button id="NavButton">Project</button>
             <button v-on:click="this.$router.push('/Gallery');" id="NavButton">Gallery</button>
@@ -134,7 +134,7 @@ export default {
   }
 
   #siteTitle{
-    padding-top: 200px;
+    font-size: 80px;
   }
 
   #NavButton{
