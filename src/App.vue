@@ -8,9 +8,9 @@
         
         <span id="Navigation">
           <h1 id="siteTitle">Hello, I'm Bonny</h1>
-            <button id="NavButton">About Me</button>
+            <button v-on:click="this.$router.push('/AboutMe');" id="NavButton">About Me</button>
             <button id="NavButton">Project</button>
-            <button id="NavButton">Gallery</button>
+            <button v-on:click="this.$router.push('/Gallery');" id="NavButton">Gallery</button>
         </span>
         <router-view class="content"/>
     </section>
@@ -86,7 +86,6 @@ export default {
     font-family: 'Courier New', Courier, monospace;
     color: #ffeded;
     text-transform: uppercase;
-    font-size: 3vmin;
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -111,7 +110,7 @@ export default {
   }
 
   #mainView{
-    height: 100%;
+    height: 100vh;
     display: grid;
     gap: 50px;
     grid-template-columns: 30% 70%;
@@ -152,5 +151,16 @@ export default {
     border-left: white 1px solid;
   }
 
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000000; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+  }
 
 </style>

@@ -1,6 +1,5 @@
 <template>
     <span id="Gallery">
-        <img src=" /wth.jpg" thum alt="">
         <img v-for="value in ImgThumbs" :key="value" :src=value>
     </span>
 </template>
@@ -29,8 +28,12 @@ img{
     margin: 20px;
 }
 
+</style>
+
+<style scoped>
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {

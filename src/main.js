@@ -4,10 +4,12 @@ import initializeScene  from './backScene';
 import { createWebHistory, createRouter } from "vue-router";
 
 import Gallery from './components/Gallery.vue'
+import AboutMe from './components/AboutMe.vue'
 
 const routes = [
     { path: '/Gallery', component: Gallery },
     { path: '/', component: Gallery },
+    { path: '/AboutMe', component: AboutMe },
 ]
 
 const router = createRouter({
