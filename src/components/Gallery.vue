@@ -1,5 +1,11 @@
 <template>
     <span id="Gallery">
+        <h2>
+            Digital Drawings:
+        </h2>
+        <h2>
+            3D Modeling & Rendering:
+        </h2>
         <img v-for="value in ImgThumbs" :key="value" :src=value>
     </span>
 </template>
