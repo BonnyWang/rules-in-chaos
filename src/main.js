@@ -8,7 +8,7 @@ import AboutMe from './components/AboutMe.vue'
 
 const routes = [
     { path: '/Gallery', component: Gallery },
-    { path: '/', component: Gallery },
+    { path: '/', component: AboutMe },
     { path: '/AboutMe', component: AboutMe },
 ]
 

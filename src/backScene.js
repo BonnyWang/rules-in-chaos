@@ -261,7 +261,7 @@ let changedSection = false;
 window.addEventListener('scroll', () =>{
     scrollY = window.scrollY;
 
-    const section = Math.round(scrollY / (sizes.height+50))
+    const section = Math.round(scrollY / sizes.height)
 
     console.log(scrollY + " " + sizes.height); 
 
