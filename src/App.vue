@@ -5,13 +5,14 @@
     </section>
       
     <section id="mainView">
-        <h1 id="siteTitle">Hello, I'm Bonny</h1>
+        
         <span id="Navigation">
+          <h1 id="siteTitle">Hello, I'm Bonny</h1>
             <button id="NavButton">About Me</button>
             <button id="NavButton">Project</button>
             <button id="NavButton">Gallery</button>
         </span>
-        <router-view />
+        <router-view class="content"/>
     </section>
     <audio ref="mbgm" controls autoplay loop hidden="true">
       <source src="/bgm.wav">
@@ -113,13 +114,24 @@ export default {
     height: 100%;
     display: grid;
     gap: 50px;
-    grid-template-columns: 30% 70%;    
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;    
       
   }
 
   #Navigation{
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .content{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
   }
 
   #siteTitle{
