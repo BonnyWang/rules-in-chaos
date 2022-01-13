@@ -106,7 +106,8 @@ export default {
   }
 
   #Enter:hover{
-    border-bottom: white 1px solid;
+    border-bottom: red 1px solid;
+    color: red;
   }
 
   #mainView{
@@ -148,7 +149,8 @@ export default {
   }
 
   #NavButton:hover{
-    border-left: white 1px solid;
+    border-left: red 1px solid;
+    color: red;
   }
 
   ::-webkit-scrollbar {
