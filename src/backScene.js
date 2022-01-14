@@ -64,13 +64,18 @@ const particlesMaterial = new THREE.PointsMaterial({
 const particlesGeometry = new THREE.BufferGeometry();
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-scene.add(particles)
+scene.add(particles);
+
+// Add a cube for show loading progress
+const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+const cubeMaterial = new THREE.MeshStandardMaterial( {color: 0x00ff00});
+const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
+scene.add( cube );
 
 
 // Load Control
-const modelCount = 3;
+const modelCount = 4;
 let modelLoaded = 0;
-let loadProgress = 0;
 
 // Load Models
 let cutie;
@@ -85,11 +90,18 @@ function loadCutie(){
         cutie.scale.z = 0.4;
         scene.add( cutie );
         
-        modelLoaded++;
+        checkProgress();
 
-        loadReal();
 
-    }, undefined, function ( error ) {
+    }, function( xhr ) {
+
+        const currentProgess = xhr.loaded / xhr.total; 
+        cube.scale.x = currentProgess*2;
+        cube.scale.z = currentProgess*2;
+        cube.scale.y = currentProgess*2;
+		console.log( currentProgess + '% loaded' );
+
+	}, function ( error ) {
 
         console.error( error );
 
@@ -116,12 +128,18 @@ function loadReal(){
         reals[0].position.x = -5;
         reals[1].position.x = 5;
 
-        modelLoaded++;
-
-        entranceAnimation();
         
+        checkProgress();
 
-    }, undefined, function ( error ) {
+    }, function( xhr ) {
+
+        const currentProgess = xhr.loaded / xhr.total; 
+        cube.scale.x = currentProgess*2;
+        cube.scale.z = currentProgess*2;
+        cube.scale.y = currentProgess*2;
+		console.log( currentProgess + '% loaded' );
+
+	}, function ( error ) {
 
         console.error( error );
 
@@ -155,13 +173,18 @@ function loadAsteroidBonny(){
         } );
 
 
-        animeBonnyAsteroid();
-        baseAnimation();
-
-        modelLoaded++;
+        checkProgress();
 
 
-    }, undefined, function ( error ) {
+    }, function( xhr ) {
+
+        const currentProgess = xhr.loaded / xhr.total; 
+        cube.scale.x = currentProgess*2;
+        cube.scale.z = currentProgess*2;
+        cube.scale.y = currentProgess*2;
+		console.log( currentProgess + '% loaded' );
+
+	}, function ( error ) {
 
         console.error( error );
 
@@ -180,14 +203,36 @@ function loadFraction(){
 
         asteroidFraction.position.y = 2;
 
-        modelLoaded++;
+        checkProgress();
 
+    }, function( xhr ) {
 
-    }, undefined, function ( error ) {
+        const currentProgess = xhr.loaded / xhr.total; 
+        cube.scale.x = currentProgess*2;
+        cube.scale.z = currentProgess*2;
+        cube.scale.y = currentProgess*2;
+		console.log(  currentProgess + '% loaded' );
+
+	}, function ( error ) {
 
         console.error( error );
 
     } );
+}
+
+function checkProgress(){
+    
+    modelLoaded++;
+    
+    if(modelLoaded == modelCount){
+        console.log("All models loaded");
+        cancelAnimationFrame(animeLoadID);
+        scene.remove(cube);
+
+        entranceAnimation();
+        animeBonnyAsteroid();
+        baseAnimation();
+    }
 }
 
 
@@ -212,25 +257,7 @@ function animeBonnyAsteroid(){
 }
 
 
-function initializeScene(){
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
-
-    renderer.render(scene, camera);
-    camera.position.z = 5;
-
-    loadAsteroidBonny();
-    loadCutie();
-    loadFraction();
-}
-
-
-
-
-// To controll the user inputs
-
-const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
 window.addEventListener( 'mousemove', onMouseMove);
@@ -275,6 +302,14 @@ function particleMove(){
     }
 }
 
+let animeLoadID;
+function animeLoad(){
+    animeLoadID = requestAnimationFrame(animeLoad);
+
+    cube.rotation.y += 0.05;
+    cube.rotation.z += 0.05;
+}
+
 let animeEntranceID;
 function entranceAnimation(){
     animeEntranceID = requestAnimationFrame(entranceAnimation);
@@ -308,18 +343,6 @@ function baseAnimation(){
 
     renderer.render(scene,camera);
 
-}
-
-
-
-
-function toMain(){
-    scene.remove(asteroidBonny);
-    scene.remove(reals[0]);
-    scene.remove(reals[1]);
-    scene.add(asteroidFraction);
-
-    mainTransition();
 }
 
 
@@ -365,6 +388,31 @@ function mainTransition(){
 function fractionBaseAnim(){
     requestAnimationFrame(fractionBaseAnim);
     asteroidFraction.rotation.y += 0.0001;
+}
+
+function toMain(){
+    scene.remove(asteroidBonny);
+    scene.remove(reals[0]);
+    scene.remove(reals[1]);
+    scene.add(asteroidFraction);
+
+    mainTransition();
+}
+
+function initializeScene(){
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    renderer.render(scene, camera);
+    camera.position.z = 5;
+
+    animeLoad();
+
+    loadAsteroidBonny();
+    loadReal();
+    loadCutie();
+    loadFraction();
 }
 
 
