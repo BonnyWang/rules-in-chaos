@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { Vector3 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
@@ -67,6 +66,12 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particles)
 
+
+// Load Control
+const modelCount = 3;
+let modelLoaded = 0;
+let loadProgress = 0;
+
 // Load Models
 let cutie;
 function loadCutie(){
@@ -79,9 +84,10 @@ function loadCutie(){
         cutie.scale.y = 0.4;
         cutie.scale.z = 0.4;
         scene.add( cutie );
+        
+        modelLoaded++;
 
         loadReal();
-
 
     }, undefined, function ( error ) {
 
@@ -109,9 +115,11 @@ function loadReal(){
 
         reals[0].position.x = -5;
         reals[1].position.x = 5;
-        
-        baseAnimate();
 
+        modelLoaded++;
+
+        entranceAnimation();
+        
 
     }, undefined, function ( error ) {
 
@@ -150,6 +158,8 @@ function loadAsteroidBonny(){
         animeBonnyAsteroid();
         baseAnimation();
 
+        modelLoaded++;
+
 
     }, undefined, function ( error ) {
 
@@ -170,6 +180,8 @@ function loadFraction(){
 
         asteroidFraction.position.y = 2;
 
+        modelLoaded++;
+
 
     }, undefined, function ( error ) {
 
@@ -179,13 +191,16 @@ function loadFraction(){
 }
 
 
-
+// Opening animation for rising asteroid
 let clock = new THREE.Clock();
 let animBonnyID;
 function animeBonnyAsteroid(){
     animBonnyID = requestAnimationFrame(animeBonnyAsteroid);
 
     asteroidBonny.rotation.y += 0.01;
+
+    
+
     var delta = clock.getDelta();
     asteroidBonny.position.y += 0.01;
     if(asteroidBonny.position.y > 2){
@@ -210,31 +225,6 @@ function initializeScene(){
     loadFraction();
 }
 
-
-// Variables for animation
-let direction = [-1,1,-1];
-let baseAnimeID;
-
-function baseAnimate(){
-    baseAnimeID = requestAnimationFrame(baseAnimate);
-
-    // cutie.rotation.y +=0.01;
-
-    reals[0].rotation.x += 0.1;
-    reals[0].rotation.z += 0.1;
-    reals[1].rotation.x -= 0.1;
-    reals[1].rotation.z -= 0.1;
-    
-    renderer.render(scene,camera);
-
-    if(reals[0].position.x > 0){
-        cancelAnimationFrame(baseAnimeID);
-        cancelAnimationFrame(feedDetectID);
-        // console.log(App.showFeed);
-    }
-
-
-}
 
 
 
@@ -274,15 +264,27 @@ window.addEventListener('scroll', () =>{
 
 })
 
-// TODO: this need to be animation which cancel itself to call
+
 function particleMove(){
     for (let index = 0; index < particlesCount; index++) {
         const particlePositions = particles.geometry.attributes.position.array;
         // particlePositions[index*3] += 0.01; 
-        particlePositions[index*3+2] += 0.1; 
+        particlePositions[index*3+2] -= 0.1; 
         particles.geometry.attributes.position.needsUpdate = true;
 
     }
+}
+
+let animeEntranceID;
+function entranceAnimation(){
+    animeEntranceID = requestAnimationFrame(entranceAnimation);
+
+
+    reals[0].rotation.y += 0.2;
+    reals[0].rotation.z += 0.2;
+    reals[1].rotation.y += 0.2;
+    reals[1].rotation.z += 0.2;
+
 }
 
 function baseAnimation(){
@@ -307,7 +309,6 @@ function baseAnimation(){
     renderer.render(scene,camera);
 
 }
-
 
 
 
@@ -337,6 +338,8 @@ function mainTransition(){
     cutie.position.x -= 0.02*CutieMove;
     cutie.position.y -= 0.01*CutieMove;
     cutie.rotation.y += 0.005*CutieMove;
+
+    particleMove();
     
     if(cutie.position.x < -5){
         CutieMove = 0;
@@ -344,12 +347,14 @@ function mainTransition(){
 
     if(expand == 1 && asteroidFraction.scale.x > 2){
         expand = -1;
+        scene.remove(particles);
     }
 
     if(expand == -1){
         asteroidFraction.position.x -=0.15;
         if(asteroidFraction.scale.x > 500){
             fractionBaseAnim();
+            
             cancelAnimationFrame(mainTransID);
         }
     }
@@ -362,43 +367,6 @@ function fractionBaseAnim(){
     asteroidFraction.rotation.y += 0.0001;
 }
 
-let feedDetectID;
-
-function feedDetect() {
-
-    feedDetectID = requestAnimationFrame(feedDetect);
-
-	raycaster.setFromCamera( mouse, camera );
-
-    // console.log(mouse)
-
-	const intersects = raycaster.intersectObjects( scene.children );
-
-	for ( let i = 0; i < intersects.length; i ++ ) {
-
-        console.log()
-
-        if(intersects[i].object.parent == reals[0] || intersects[i].object.parent == reals[1] ){
-            intersects[ i ].object.material.color.set( 0x333333 );
-
-            var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
-            vector.unproject( camera );
-            var dir = vector.sub( camera.position ).normalize();
-            var distance = - camera.position.z / dir.z;
-            var pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
-            
-            reals[0].position.x = pos.x;
-            reals[1].position.x = -pos.x;
-        }
-
-	}
-
-	renderer.render( scene, camera );
-
-}
-
-
-window.requestAnimationFrame(feedDetect);
 
 
 export default initializeScene; 
