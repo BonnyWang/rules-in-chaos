@@ -1,15 +1,16 @@
 <template>
   <div id="mainHolder">
     <section id="Welcome" v-if="firstEnter">
-        <button id="Enter" v-on:click="toMyWorld">↓ Enter My World ↓ </button>
+        <button v-if="loaded" id="Enter" v-on:click="toMyWorld">↓ Enter My World ↓ </button>
+        <h2 v-if="!loaded"> loading {{loadingProgress}} % </h2>
     </section>
       
-    <section id="mainView">
+    <section id="mainView" v-if="loaded">
         
         <span id="Navigation">
           <h1 id="siteTitle">WELCOME</h1>
             <button v-on:click="this.$router.push('/AboutMe');" id="NavButton">About Me</button>
-            <button id="NavButton">Project</button>
+            <button v-on:click="this.$router.push('/Projects');" id="NavButton">Project</button>
             <button v-on:click="this.$router.push('/Gallery');" id="NavButton">Gallery</button>
         </span>
         <router-view class="content"/>
@@ -30,6 +31,8 @@ export default {
   },
   data:function(){
     return {
+      loadingProgress: 0,
+      loaded: false,
       firstEnter: true
     }
   },

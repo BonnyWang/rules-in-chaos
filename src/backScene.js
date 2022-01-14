@@ -68,7 +68,7 @@ scene.add(particles);
 
 // Add a cube for show loading progress
 const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
-const cubeMaterial = new THREE.MeshStandardMaterial( {color: 0x00ff00});
+const cubeMaterial = new THREE.MeshStandardMaterial( {color: 0xff0000});
 const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 scene.add( cube );
 
@@ -99,6 +99,8 @@ function loadCutie(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
+
+        mapp.loadingProgress = currentProgess*100;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -137,6 +139,7 @@ function loadReal(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
+        mapp.loadingProgress = currentProgess*100;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -182,6 +185,7 @@ function loadAsteroidBonny(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
+        mapp.loadingProgress = currentProgess*100;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -211,6 +215,7 @@ function loadFraction(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
+        mapp.loadingProgress = currentProgess*100;
 		console.log(  currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -228,6 +233,8 @@ function checkProgress(){
         console.log("All models loaded");
         cancelAnimationFrame(animeLoadID);
         scene.remove(cube);
+
+        mapp.loaded = true;
 
         entranceAnimation();
         animeBonnyAsteroid();
@@ -308,6 +315,8 @@ function animeLoad(){
 
     cube.rotation.y += 0.05;
     cube.rotation.z += 0.05;
+
+    renderer.render(scene, camera);
 }
 
 let animeEntranceID;

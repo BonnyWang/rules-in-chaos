@@ -3,10 +3,11 @@
         <h2>
             Digital Drawings:
         </h2>
+        <img v-for="value in digitalThumbs" :key="value" :src=value>
         <h2>
             3D Modeling & Rendering:
         </h2>
-        <img v-for="value in ImgThumbs" :key="value" :src=value>
+        <img v-for="value in modelThumbs" :key="value" :src=value>
     </span>
 </template>
 
@@ -15,7 +16,8 @@ export default {
     name:"Gallery",
     data() {
         return {
-            ImgThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/m0.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg"]
+            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg"],
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/m0.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg"]
         }
     },
     mounted(){
