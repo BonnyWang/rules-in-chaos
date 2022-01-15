@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { Color } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
@@ -76,6 +77,12 @@ scene.add( cube );
 // Load Control
 const modelCount = 4;
 let modelLoaded = 0;
+let cutieLoadProgress = 0;
+let asteroidLoadProgress = 0;
+let realLoadProgress = 0;
+let fractionLoadProgress = 0;
+
+
 
 // Load Models
 let cutie;
@@ -100,7 +107,8 @@ function loadCutie(){
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
 
-        mapp.loadingProgress = currentProgess*100;
+        cutieLoadProgress = currentProgess*100;
+        mapp.loadingProgress = (cutieLoadProgress + asteroidLoadProgress + realLoadProgress + fractionLoadProgress)/4;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -139,7 +147,8 @@ function loadReal(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
-        mapp.loadingProgress = currentProgess*100;
+       realLoadProgress = currentProgess*100;
+        mapp.loadingProgress = (cutieLoadProgress + asteroidLoadProgress + realLoadProgress + fractionLoadProgress)/4;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -185,7 +194,8 @@ function loadAsteroidBonny(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
-        mapp.loadingProgress = currentProgess*100;
+        asteroidLoadProgress = currentProgess*100;
+        mapp.loadingProgress = (cutieLoadProgress + asteroidLoadProgress + realLoadProgress + fractionLoadProgress)/4;
 		console.log( currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -215,7 +225,8 @@ function loadFraction(){
         cube.scale.x = currentProgess*2;
         cube.scale.z = currentProgess*2;
         cube.scale.y = currentProgess*2;
-        mapp.loadingProgress = currentProgess*100;
+        fractionLoadProgress = currentProgess*100;
+        mapp.loadingProgress = (cutieLoadProgress + asteroidLoadProgress + realLoadProgress + fractionLoadProgress)/4;
 		console.log(  currentProgess + '% loaded' );
 
 	}, function ( error ) {
@@ -303,7 +314,8 @@ function particleMove(){
     for (let index = 0; index < particlesCount; index++) {
         const particlePositions = particles.geometry.attributes.position.array;
         // particlePositions[index*3] += 0.01; 
-        particlePositions[index*3+2] -= 0.1; 
+        particlePositions[index*3+2] -= 0.001; 
+        particlePositions[index*3] -= 0.005; 
         particles.geometry.attributes.position.needsUpdate = true;
 
     }
@@ -371,6 +383,8 @@ function mainTransition(){
     cutie.position.y -= 0.01*CutieMove;
     cutie.rotation.y += 0.005*CutieMove;
 
+
+
     particleMove();
     
     if(cutie.position.x < -5){
@@ -379,7 +393,7 @@ function mainTransition(){
 
     if(expand == 1 && asteroidFraction.scale.x > 2){
         expand = -1;
-        scene.remove(particles);
+        camera.rotation.x += 0.1;
     }
 
     if(expand == -1){
