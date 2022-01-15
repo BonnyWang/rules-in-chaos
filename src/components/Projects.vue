@@ -35,13 +35,13 @@ export default {
 .projectCard{
     background: none;
     padding: 10px;
-    width: 500px;
+    width: 40%;
     color: white;
     font-size: 25px;
     border: none;
     border: red 1px solid;
     font-family: 'Courier New', Courier, monospace;
-    margin: 10px;
+    margin: 5%;
 }
 
 .projectCard:hover{
