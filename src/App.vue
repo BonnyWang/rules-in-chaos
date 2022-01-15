@@ -9,16 +9,19 @@
         
         <span id="Navigation">
           <h1 id="siteTitle">WELCOME</h1>
-            <button v-on:click="this.$router.push('/AboutMe');" id="NavButton">About Me</button>
-            <button v-on:click="this.$router.push('/Projects');" id="NavButton">Projects</button>
-            <button v-on:click="this.$router.push('/Gallery');" id="NavButton">Gallery</button>
+            <router-link to="/AboutMe" id="NavButton">About Me</router-link>
+            <router-link to="/Projects" id="NavButton">Projects</router-link>
+            <router-link to="/Gallery" id="NavButton">Gallery</router-link>
         </span>
-        <router-view class="content"/>
+        <transition name="fade">
+          <router-view class="content" :key="$route.fullPath"/>
+        </transition>
     </section>
     <audio ref="mbgm" controls autoplay loop hidden="true">
       <source src="/bgm.wav">
     Your browser does not support the audio element.
     </audio>
+  
   </div>
 </template>
 
@@ -143,6 +146,7 @@ export default {
   #NavButton{
     display: block;
     background: none;
+    text-decoration: none;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     border: none;
@@ -165,6 +169,19 @@ export default {
 
   ::-webkit-scrollbar-thumb {
     background: white; 
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  .fade-enter-active {
+    transition-delay: 0.5s;
+  }
+
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
 
 </style>
