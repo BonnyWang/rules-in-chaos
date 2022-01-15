@@ -16,8 +16,8 @@ export default {
     name:"Gallery",
     data() {
         return {
-            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg"],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/m0.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg"]
+            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/m0.jpg",],
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg"]
         }
     },
     mounted(){
