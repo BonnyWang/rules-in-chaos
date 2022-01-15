@@ -10,7 +10,7 @@
         <span id="Navigation">
           <h1 id="siteTitle">WELCOME</h1>
             <button v-on:click="this.$router.push('/AboutMe');" id="NavButton">About Me</button>
-            <button v-on:click="this.$router.push('/Projects');" id="NavButton">Project</button>
+            <button v-on:click="this.$router.push('/Projects');" id="NavButton">Projects</button>
             <button v-on:click="this.$router.push('/Gallery');" id="NavButton">Gallery</button>
         </span>
         <router-view class="content"/>

@@ -6,11 +6,13 @@ import { createWebHistory, createRouter } from "vue-router";
 import Gallery from './components/Gallery.vue'
 import AboutMe from './components/AboutMe.vue'
 import Projects from './components/Projects.vue'
+import SpacePersona from './components/Projects/SpacePersona.vue'
 
 const routes = [
     { path: '/Gallery', component: Gallery },
     { path: '/', component: AboutMe }, 
     { path: '/Projects', component: Projects }, 
+    { path: '/Projects/SpacePersona', component: SpacePersona }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 

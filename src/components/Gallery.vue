@@ -1,11 +1,11 @@
 <template>
     <span id="Gallery">
-        <h2>
-            Digital Drawings:
+        <h2 class="imageSection">
+            Digital Drawing & Design :
         </h2>
         <img v-for="value in digitalThumbs" :key="value" :src=value>
-        <h2>
-            3D Modeling & Rendering:
+        <h2 class="imageSection">
+            3D Modeling & Rendering :
         </h2>
         <img v-for="value in modelThumbs" :key="value" :src=value>
     </span>
@@ -39,6 +39,10 @@ img{
 </style>
 
 <style scoped>
+.imageSection{
+    padding: 10px;
+    border-left: 1px red solid;
+}
 
 ::-webkit-scrollbar {
   width: 8px;
