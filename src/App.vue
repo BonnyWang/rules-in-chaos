@@ -13,9 +13,11 @@
             <router-link to="/Projects" id="NavButton">Projects</router-link>
             <router-link to="/Gallery" id="NavButton">Gallery</router-link>
         </span>
-        <transition name="fade">
-          <router-view class="content" :key="$route.fullPath"/>
-        </transition>
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
     </section>
     <audio ref="mbgm" controls autoplay loop hidden="true">
       <source src="/bgm.wav">
@@ -173,7 +175,7 @@ export default {
 
   .fade-enter-active,
   .fade-leave-active {
-      transition: opacity 0.5s ease;
+      transition: opacity 0.25s ease;
   }
 
   .fade-enter-from,
@@ -181,4 +183,36 @@ export default {
       opacity: 0;
   }
 
+  @media only screen and (max-width: 1000px) {
+
+     #mainView{
+      height: 100vh;
+      display: inline;
+      padding: 20px;      
+      
+    }
+    #siteTitle{
+    font-size: 30px;
+    }
+
+    #NavButton{
+      font-size: 20px;
+    }
+
+    #Navigation{
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+
+    }
+
+    .content{
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+
+    }
+  }
 </style>

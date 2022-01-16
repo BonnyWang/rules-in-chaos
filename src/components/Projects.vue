@@ -5,7 +5,7 @@
             <p>A Personality Game About Finding Your Position in Space Mining Era</p>
             <img class="projectImg" src="/ImgThumbNail/spacePersona.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
+        <button v-on:click="this.$router.push('/Projects/GravityGame');" class="projectCard">
             <h2>Gravity Game</h2>
             <p>A Mini Game Created by Unity to Explore the Effect of Gravity</p>
             <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
@@ -57,6 +57,14 @@ export default {
 
 .projectImg{
     border: white 1px solid;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .projectCard{
+        width: 80%;
+        margin: 5%;
+    }
 }
 
 </style>

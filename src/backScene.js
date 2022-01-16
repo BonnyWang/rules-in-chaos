@@ -298,7 +298,7 @@ window.addEventListener('scroll', () =>{
 
     const section = Math.round(scrollY / sizes.height)
 
-    console.log(scrollY + " " + sizes.height); 
+    // console.log(scrollY + " " + sizes.height); 
 
     if(section == 1 && !changedSection){
         changedSection = true;
