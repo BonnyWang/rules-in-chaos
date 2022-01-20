@@ -1,7 +1,7 @@
 <template>
     <span id="AboutMe">
         <h3>
-            Hi, I'm 博尼! Welcome to my world!
+            Hi, I'm <mark class="red">博尼</mark>! Welcome to my world!
         </h3>
         <h3>
              I'm currently study Electrical Engineering at the Cooper Union.
@@ -13,11 +13,13 @@
         <h3>
             Hope you enjoy it!
         </h3>
+        <br>
         <h3>
-            Here's my CV:
-            any communication is welcome
+           If you have any questions, feel free to contact me.
         </h3>
-        <a href="fefase">fasdfasdf</a>
+        <h3 style="color:purple">
+           wang27@cooper.edu
+        </h3>
     </span>
   
 </template>
@@ -36,4 +38,9 @@ export default {
     overflow-y: scroll;
 }
 
+mark{
+    color: red;
+    background: none;
+    font-size: 30px;
+}
 </style>

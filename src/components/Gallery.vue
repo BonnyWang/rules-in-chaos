@@ -32,8 +32,8 @@ export default {
     overflow-y: scroll;
 }
 img{
-    width: 200px;
-    margin: 20px;
+    width: 30%;
+    margin: 1.5%;
 }
 
 </style>

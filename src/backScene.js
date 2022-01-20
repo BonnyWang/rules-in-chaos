@@ -59,7 +59,7 @@ for(let i = 0; i < particlesCount; i++){
 const particlesMaterial = new THREE.PointsMaterial({
     color: '#212121',
     sizeAttenuation: true,
-    size: 0.1
+    size: 0.05
 })
 
 const particlesGeometry = new THREE.BufferGeometry();

@@ -115,6 +115,7 @@ export default {
   #Enter:hover{
     border-bottom: red 1px solid;
     color: red;
+    cursor: pointer;
   }
 
   #mainView{
