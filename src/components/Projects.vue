@@ -1,6 +1,16 @@
 <template>
     <span id="projectList">
         <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
+            <h2>Cosmic Voids Research</h2>
+            <p>Using Moment Network to Produce Likelihood-Free Inference of Cosmological Parameters Using Cosmic Voids' Properties</p>
+            <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
+        </button>
+        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
+            <h2>Cosmic Voids Visualization with MR Technology</h2>
+            <p>Visualize the Unseeable Cosmic Structure with Unity </p>
+            <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
+        </button>
+        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
             <h2>Space Persona</h2>
             <p>A Personality Game About Finding Your Position in the Space Mining Era</p>
             <img class="projectImg" src="/ImgThumbNail/spacePersona.jpg">
@@ -10,7 +20,7 @@
             <p>A Game Created by Unity to Explore the Effect of Gravity</p>
             <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
         </button>
-        <button class="projectCard">
+        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
             <h2>Space Telescope Data Center</h2>
             <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space Company</p>
             <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">

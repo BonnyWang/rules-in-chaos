@@ -1,10 +1,10 @@
 <template>
     <span id="Gallery">
-        <h2 class="imageSection">
+        <h2 class="GallerySubTitle">
             Digital Drawing & Design :
         </h2>
         <img v-for="value in digitalThumbs" :key="value" :src=value>
-        <h2 class="imageSection">
+        <h2 class="GallerySubTitle">
             3D Modeling & Rendering :
         </h2>
         <img v-for="value in modelThumbs" :key="value" :src=value>
@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/m0.jpg",],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg"]
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg"]
         }
     },
     mounted(){
@@ -30,19 +30,30 @@ export default {
     margin-top: 100px;
     height: 60%;
     overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 img{
     width: 30%;
     margin: 1.5%;
+    border: red 1px solid;
+}
+
+img:hover{
+   cursor: pointer;
+}
+
+.GallerySubTitle{
+    padding: 10px;
+    border-left: 1px red solid;
+    width:100%;
 }
 
 </style>
 
 <style scoped>
-.imageSection{
-    padding: 10px;
-    border-left: 1px red solid;
-}
+
 
 ::-webkit-scrollbar {
   width: 8px;

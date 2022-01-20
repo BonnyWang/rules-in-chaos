@@ -9,6 +9,7 @@ import Projects from './components/Projects.vue'
 import SpacePersona from './components/Projects/SpacePersona.vue'
 import GravityGame from './components/Projects/GravityGame.vue'
 import ChinesePoem from './components/Projects/ChinesePoem.vue'
+import SpaceObserver from './components/Projects/SpaceObserver.vue'
 
 const routes = [
     { path: '/Gallery', component: Gallery },
@@ -17,6 +18,7 @@ const routes = [
     { path: '/Projects/SpacePersona', component: SpacePersona }, 
     { path: '/Projects/GravityGame', component: GravityGame }, 
     { path: '/Projects/ChinesePoem', component: ChinesePoem }, 
+    { path: '/Projects/SpaceObserver', component: SpaceObserver }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 
