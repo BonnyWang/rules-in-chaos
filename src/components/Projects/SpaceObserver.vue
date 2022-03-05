@@ -10,9 +10,9 @@
             For yunxi conference
         </p>
         <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nzd00f4zRsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="60%" height="315" src="https://www.youtube.com/embed/Nzd00f4zRsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/olX8RoZDtDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="60%" height="315" src="https://www.youtube.com/embed/olX8RoZDtDA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </span>
   
 </template>

@@ -14,10 +14,10 @@
         </p>
         <p>
             As you can see from the video below, the objects
-            amazing trajectory Reveal the natural of our universe
+            amazing trajectory Reveal the natural of our universe.
         </p>
         <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/KMF9nGV43CU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="60%" height="315" src="https://www.youtube.com/embed/KMF9nGV43CU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </span>
   
 </template>

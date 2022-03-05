@@ -15,7 +15,7 @@
         </h3>
         <br>
         <h3>
-           If you have any questions, feel free to contact me.
+           If you have any questions, feel free to contact me at
         </h3>
         <h3 style="color:purple">
            wang27@cooper.edu

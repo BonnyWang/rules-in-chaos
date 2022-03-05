@@ -1,13 +1,15 @@
 <template>
     <span id="projectList">
-        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
+        <button v-on:click="this.$router.push('/Projects/VoidsResearch');" class="projectCard">
             <h2>Cosmic Voids Research</h2>
+            <h3>Still in Progress...</h3>
             <p>Using Moment Network to Produce Likelihood-Free Inference of Cosmological Parameters Using Cosmic Voids' Properties</p>
-            <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
+            <img class="projectImg" src="/ImgThumbNail/web.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
-            <h2>Cosmic Voids Visualization with MR Technology</h2>
-            <p>Visualize the Unseeable Cosmic Structure with Unity </p>
+        <button v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
+            <h2>Data Visualization for Cosmic Voids</h2>
+            <h3>Still in Progress...</h3>
+            <p>Using VR Technology to Create Immersive scene for cosmic voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
         <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
@@ -45,6 +47,7 @@
             <p>Android App Developed to Connect and Control the PhotonLab Smart Lights</p>
             <img class="projectImg" src="/ImgThumbNail/PhotonLab.jpg">
         </button>
+    
     </span>
 </template>
 
@@ -85,6 +88,11 @@ export default {
 
 .projectCard h2{
     font-size: 25px;
+}
+
+.projectCard h3{
+    font-size: 15px;
+    color: chartreuse;
 }
 
 .projectCard p{

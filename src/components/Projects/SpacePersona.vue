@@ -12,7 +12,7 @@
         <p>
             Used Three.js and companies's satellite model
         </p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/3rVGH-63lOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="60%" height="315" src="https://www.youtube.com/embed/3rVGH-63lOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
     </span>
   
@@ -40,7 +40,20 @@ export default {
     height: 60%;
     overflow-y: scroll;
     padding: 10px;
+    padding-right: 30px;
 
 }
 
+.projectContent p{
+    padding-right: 50px;
+}
+
+.projectContent img{
+    width: 60%;
+    border: none;
+}
+
+.projectContent a{
+    color: aqua;
+}
 </style>

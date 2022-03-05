@@ -10,6 +10,8 @@ import SpacePersona from './components/Projects/SpacePersona.vue'
 import GravityGame from './components/Projects/GravityGame.vue'
 import ChinesePoem from './components/Projects/ChinesePoem.vue'
 import SpaceObserver from './components/Projects/SpaceObserver.vue'
+import VoidsResearch from './components/Projects/VoidsResearch.vue'
+import VRVoids from './components/Projects/VRVoids.vue'
 
 const routes = [
     { path: '/Gallery', component: Gallery },
@@ -19,6 +21,8 @@ const routes = [
     { path: '/Projects/GravityGame', component: GravityGame }, 
     { path: '/Projects/ChinesePoem', component: ChinesePoem }, 
     { path: '/Projects/SpaceObserver', component: SpaceObserver }, 
+    { path: '/Projects/VoidsResearch', component: VoidsResearch }, 
+    { path: '/Projects/VRVoids', component: VRVoids }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 
