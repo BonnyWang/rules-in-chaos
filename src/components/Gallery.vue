@@ -3,11 +3,19 @@
         <h2 class="GallerySubTitle">
             Digital Drawing & Design :
         </h2>
-        <img v-for="value in digitalThumbs" :key="value" :src=value>
+        <ul>
+            <li v-for="value in digitalThumbs" :key="value">
+                <img :src=value>
+            </li>
+        </ul>
         <h2 class="GallerySubTitle">
             3D Modeling & Rendering :
         </h2>
-        <img v-for="value in modelThumbs" :key="value" :src=value>
+        <ul>
+            <li v-for="value in modelThumbs" :key="value">
+                <img :src=value>
+            </li>
+        </ul>
     </span>
 </template>
 
@@ -26,6 +34,7 @@ export default {
 </script>
 
 <style>
+
 #Gallery{
     margin-top: 100px;
     height: 60%;
@@ -34,10 +43,24 @@ export default {
     flex-wrap: wrap;
     align-items: center;
 }
-img{
+
+li{
+    display: inline-flex;
     width: 30%;
+    list-style-type: none;
     margin: 1.5%;
+}
+
+ul{
+    display: inline;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+img{
+    width: 100%;
     border: red 1px solid;
+
 }
 
 img:hover{

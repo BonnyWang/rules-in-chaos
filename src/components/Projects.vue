@@ -129,7 +129,7 @@ export default {
         width: 80%;
     }
 
-    img{
+    li{
         width: 45%;
     }
 }
