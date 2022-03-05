@@ -51,6 +51,7 @@ export default {
 .projectContent img{
     width: 60%;
     border: none;
+    margin-left: 0px;
 }
 
 .projectContent a{

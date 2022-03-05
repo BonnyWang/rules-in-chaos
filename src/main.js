@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import initializeScene  from './backScene';
-import { createWebHistory, createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 import Gallery from './components/Gallery.vue'
 import AboutMe from './components/AboutMe.vue'
@@ -12,8 +12,12 @@ import ChinesePoem from './components/Projects/ChinesePoem.vue'
 import SpaceObserver from './components/Projects/SpaceObserver.vue'
 import VoidsResearch from './components/Projects/VoidsResearch.vue'
 import VRVoids from './components/Projects/VRVoids.vue'
+import catHome from './components/Projects/catHome'
+import photonLab from './components/Projects/photonLab.vue'
+import smartContract from './components/Projects/smartContract.vue'
 
 const routes = [
+    { path: "/:catchAll(.*)", component: AboutMe }, 
     { path: '/Gallery', component: Gallery },
     { path: '/', component: AboutMe }, 
     { path: '/Projects', component: Projects }, 
@@ -23,12 +27,14 @@ const routes = [
     { path: '/Projects/SpaceObserver', component: SpaceObserver }, 
     { path: '/Projects/VoidsResearch', component: VoidsResearch }, 
     { path: '/Projects/VRVoids', component: VRVoids }, 
+    { path: '/Projects/catHome', component: catHome }, 
+    { path: '/Projects/photonLab', component: photonLab }, 
+    { path: '/Projects/smartContract', component: smartContract }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    mode: 'hash',
     routes,
   });
 

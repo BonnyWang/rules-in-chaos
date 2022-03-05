@@ -57,6 +57,7 @@ export default {
     }
   },
   mounted(){
+    console.log( this.$route.path);
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0,0); 
 

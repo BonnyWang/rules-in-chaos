@@ -19,6 +19,9 @@
             The cosmological parameters we aim to explore are Ω<sub>m</sub>, Ω<sub>b</sub>, h, n<sub>s</sub>, σ<sub>8</sub>, M<sub>ν</sub> and w.
         </p>
         <p>
+            Dataset Used: The GIGANTES dataset(Created by running the void finder VIDE QUIJOTE’s halo simulations.)
+        </p>
+        <p>
             Previous study from Prof. Alice Pisani(We have successfully reproduced the following image):
         </p>
         <img style="width:80%" src="\ImgThumbNail\vsfParameter.jpg">
@@ -28,6 +31,11 @@
             Currently we want to explore the relationship between the voids' ellip value and cosmological parameters. The following image indicate the relationship between cosmic voids' radius and ellip values.
         </p>
         <img style="width:50%" src="\ImgThumbNail\ellipsevsR.jpg">
+        <p>
+            The moment network is aim to minimize the loss function:
+        </p>
+        <img src="\ImgThumbNail\moment.jpg">
+        <figcaption>Image Source: https://arxiv.org/pdf/2011.05991.pdf</figcaption>
     </span>
 </template>
 

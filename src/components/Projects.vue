@@ -12,6 +12,11 @@
             <p>Using VR Technology to Create Immersive scene for cosmic voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
+        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
+            <h2>Space Telescope Data Center</h2>
+            <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space Company</p>
+            <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">
+        </button>
         <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
             <h2>Space Persona</h2>
             <p>A Personality Game About Finding Your Position in the Space Mining Era</p>
@@ -22,30 +27,26 @@
             <p>A Game Created by Unity to Explore the Effect of Gravity</p>
             <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
-            <h2>Space Telescope Data Center</h2>
-            <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space Company</p>
-            <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">
-        </button>
+        
         <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
             <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
             <p>Using Tensorflow with the GRU architecture to Autogenerate Chinese Poems</p>
             <img class="projectImg" src="/ImgThumbNail/ChinesePoem.jpg">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
-            <p>A 2D Platformer and Simulation Game about Re-evoking People’s Love with Cats in a Cyberpunk World</p>
+            <p>A 2D platformer and simulation game about reviving people’s love for cats in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/photonLab');">
             <h2>PhotonLab Android App</h2>
             <p>Android App Developed to Connect and Control the PhotonLab Smart Lights</p>
             <img class="projectImg" src="/ImgThumbNail/PhotonLab.jpg">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
-            <h2>Smart Contract ReenTrancy and unahn..</h2>
-            <p>Android App Developed to Connect and Control the PhotonLab Smart Lights</p>
-            <img class="projectImg" src="/ImgThumbNail/PhotonLab.jpg">
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/smartContract');">
+            <h2>Smart Contract Vulnerabilities Detection</h2>
+            <p>A Program for Detecting Reentrancy and Unhandled Exceptions</p>
+            <img class="projectImg" src="/ImgThumbNail/smart.jpg">
         </button>
     
     </span>
