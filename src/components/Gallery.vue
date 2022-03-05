@@ -4,16 +4,20 @@
             Digital Drawing & Design :
         </h2>
         <ul>
-            <li v-for="value in digitalThumbs" :key="value">
-                <img :src=value>
+            <li v-for="value in digitals" :key="value">
+                <a :href=value.original>
+                    <img :src=value.thumbs>
+                </a>
             </li>
         </ul>
         <h2 class="GallerySubTitle">
             3D Modeling & Rendering :
         </h2>
         <ul>
-            <li v-for="value in modelThumbs" :key="value">
-                <img :src=value>
+            <li v-for="value in models" :key="value">
+                <a :href=value.original>
+                    <img :src=value.thumbs>
+                </a>
             </li>
         </ul>
     </span>
@@ -25,12 +29,25 @@ export default {
     data() {
         return {
             modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/m0.jpg",],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg"]
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg"],
+            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/m0.jpg"],
+            digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg","https://bonnymidterm.glitch.me"]
         }
     },
-    mounted(){
+    computed: {
+        models() {
+            return this.modelThumbs.map((itm, i) => {
+                return { thumbs: itm, original: this.modeloriginals[i] }
+            })
+        },
+        digitals() {
+            return this.digitalThumbs.map((itm, i) => {
+                return { thumbs: itm, original: this.digitalOriginals[i] }
+            })
+        }
     }
 }
+
 </script>
 
 <style>
