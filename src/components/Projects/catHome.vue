@@ -15,7 +15,7 @@
             Game concept art:
         </p>
         <img style="image-rendering: pixelated;" src="\ImgThumbNail\endCG.jpg">
-        <img style="image-rendering: pixelated;" src="\ImgThumbNail\openCG.jpeg">
+        <img style="image-rendering: pixelated;" src="\ImgThumbNail\OpenCG.jpeg">
         <p>
             Game play video:
         </p>

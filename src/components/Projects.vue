@@ -27,17 +27,17 @@
             <p>A Game Created by Unity to Explore the Effect of Gravity</p>
             <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
         </button>
-        
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
-            <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
-            <p>Using Tensorflow with the GRU architecture to Autogenerate Chinese Poems</p>
-            <img class="projectImg" src="/ImgThumbNail/ChinesePoem.jpg">
-        </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
             <p>A 2D platformer and simulation game about reviving people’s love for cats in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
         </button>
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
+            <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
+            <p>Using Tensorflow with the GRU architecture to Autogenerate Chinese Poems</p>
+            <img class="projectImg" src="/ImgThumbNail/chinesePoem.jpg">
+        </button>
+        
         <button class="projectCard" v-on:click="this.$router.push('/Projects/photonLab');">
             <h2>PhotonLab Android App</h2>
             <p>Android App Developed to Connect and Control the PhotonLab Smart Lights</p>
