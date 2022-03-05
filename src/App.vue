@@ -189,7 +189,7 @@ export default {
 
      #mainView{
       height: 100vh;
-      display: inline;
+      display: block;
       padding: 20px;      
       
     }

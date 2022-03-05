@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import initializeScene  from './backScene';
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory} from "vue-router";
 
 import Gallery from './components/Gallery.vue'
 import AboutMe from './components/AboutMe.vue'
@@ -34,7 +34,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
   });
 

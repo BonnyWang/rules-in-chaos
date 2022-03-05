@@ -110,6 +110,27 @@ export default {
     .projectCard{
         width: 80%;
         margin: 5%;
+        
+    }
+
+    #projectList{
+        margin-top: 8% !important;
+        height: -webkit-fill-available;
+    }
+
+    .projectContent{
+        display: block;
+        margin-top: 8% !important;
+        height: -webkit-fill-available !important;
+
+    }
+
+    iframe{
+        width: 80%;
+    }
+
+    img{
+        width: 45%;
     }
 }
 
