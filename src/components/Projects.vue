@@ -113,6 +113,10 @@ export default {
         
     }
 
+    #Gallery{
+        margin-top: 8% !important;
+    }
+
     #projectList{
         margin-top: 8% !important;
         height: -webkit-fill-available;
