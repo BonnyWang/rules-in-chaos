@@ -52,6 +52,7 @@ export default {
     width: 60%;
     border: none;
     margin-left: 0px;
+    margin-right: 10px;
 }
 
 .projectContent a{
