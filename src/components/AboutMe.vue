@@ -4,11 +4,11 @@
             Hi, I'm <mark class="red">博尼</mark>! Welcome to my world!
         </h3>
         <h3>
-             I'm currently study Electrical Engineering at the Cooper Union.
+             I'm currently studying Electrical Engineering at the Cooper Union.
         </h3>
 
         <h3>
-            This site is for showing all my works and projects.
+            This site is for showing all my work and projects.
         </h3>
         <h3>
             Hope you enjoy it!
