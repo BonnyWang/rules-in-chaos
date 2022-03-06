@@ -48,6 +48,17 @@ export default {
     padding-right: 50px;
 }
 
+p{
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+
+}
+
+figcaption{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .projectContent img{
     width: 60%;
     border: none;
