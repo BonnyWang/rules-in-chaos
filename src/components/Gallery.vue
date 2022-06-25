@@ -20,6 +20,19 @@
                 </a>
             </li>
         </ul>
+
+        <h2 class="GallerySubTitle">
+            Videos :
+        </h2>
+        <ul id="videoItem">
+            <li id="videoItem">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/M-_IJ4WDqfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li id="videoItem">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/fQhPaQzmvVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+
+        </ul>
     </span>
 </template>
 
@@ -28,10 +41,10 @@ export default {
     name:"Gallery",
     data() {
         return {
-            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/m0.jpg",],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg"],
-            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/m0.jpg"],
-            digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg","https://bonnymidterm.glitch.me"]
+            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/starGas.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/scifi.jpg","/ImgThumbNail/m0.jpg"],
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg","/ImgThumbNail/wth.jpg"],
+            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg"],
+            digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/wth.jpg"]
         }
     },
     computed: {
@@ -66,6 +79,10 @@ li{
     width: 30%;
     list-style-type: none;
     margin: 1.5%;
+}
+
+#videoItem{
+    width: 80%;
 }
 
 ul{
