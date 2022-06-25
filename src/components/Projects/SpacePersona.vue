@@ -10,7 +10,7 @@
             A Personality Game About Finding Your Position in the Space Mining Era
         </h2>
         <p>
-            Used Three.js and companies's satellite model
+            Used Three.js and company's satellite model
         </p>
         <iframe width="60%" height="315" src="https://www.youtube.com/embed/3rVGH-63lOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         

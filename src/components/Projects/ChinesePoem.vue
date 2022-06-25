@@ -51,13 +51,13 @@
 
         </p>
         <p>
-            Datasets are splitted into batches of size 64.In each batch, there is a pair of sequence of length 100 with one character shifted function as the input and the target(prediction).Since the task is generating text. There is no need for a testing dataset. However, the start phrase is chosen to be ‘title’ based on the format of the dataset and anticipated format of the result. 
+            Datasets are split into batches of size 64. In each batch, there is a pair of sequences of length 100 with one character shifted function as the input and the target(prediction). Since the task is generating text. There is no need for a testing dataset. However, the start phrase is chosen to be ‘title’ based on the format of the dataset and the anticipated format of the result. 
 
         </p>
         <p>
-            As a person who did not have too much in depth knowledge in Chinese poetry from the Tang dynasty, the result looks decent to me. Some of the sentences sound like a real poem. It also figured out the author correctly. Since the title and the name of the author have more clear patterns, the results for these two parts are generally reasonable. Most of the author names generated are actual authors instead of a random name. Most of the titles are also similar to an actual title or is an existing title.<br>
+            As a person who did not have too much in-depth knowledge of Chinese poetry from the Tang dynasty, the result looks decent to me. Some of the sentences sound like a real poem. It also figured out the author correctly. Since the title and the name of the author have more clear patterns, the results for these two parts are generally reasonable. Most of the author names generated are actual authors instead of random names. Most of the titles are also similar to an actual title or is an existing title.<br>
             <br>
-            However, there are more problems in the paragraphs part. Usually, if most other sentences have the same size, there should not be an exception. We can see several outputs have different sizes for sentences. The last poem of the sample output also have “paragraphs:張說” followed by “paragraphs:” which is clearly not right. It could be inferred that the correct new line character is not generated and the “張” is a very typical last name so instead of paragraph, the author name is generated.
+            However, there are more problems the part of the paragraph. Usually, if most other sentences have the same size, there should not be an exception. We can see several outputs have different sizes for sentences. The last poem of the sample output also has “paragraphs:張說” followed by “paragraphs:” which is clearly not right. It could be inferred that the correct newline character is not generated and the “張” is a very typical last name so instead of a paragraph, the author name is generated.
 
         </p>
         
