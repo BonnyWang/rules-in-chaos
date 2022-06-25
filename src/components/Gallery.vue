@@ -22,7 +22,7 @@
         </ul>
 
         <h2 class="GallerySubTitle">
-            Videos :
+            Video :
         </h2>
         <ul id="videoItem">
             <li id="videoItem">
@@ -42,9 +42,9 @@ export default {
     data() {
         return {
             modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/starGas.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/scifi.jpg","/ImgThumbNail/m0.jpg"],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/CSSGarden.jpg","/ImgThumbNail/wth.jpg"],
+            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/wth.jpg","/ImgThumbNail/CSSGarden.jpg","/ImgThumbNail/Poster.jpg"],
             modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg"],
-            digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/wth.jpg"]
+            digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg", "/ImgOriginal/wth.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/Poster.jpg"]
         }
     },
     computed: {
