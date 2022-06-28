@@ -32,6 +32,11 @@
             <p>A 2D platformer and simulation game about reviving people’s love for cats in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
         </button>
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/DLD');">
+            <h2>Digital Logic Design: “Whac-a-Mole”</h2>
+            <p>A circuit designed with fundamental electronic components including timers, counters, flipflops, decoders, and logic gates</p>
+            <img class="projectImg" src="/ImgThumbNail/DLDShow.jpg">
+        </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
             <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
             <p>Using Tensorflow with the GRU architecture to Autogenerate Chinese Poems</p>

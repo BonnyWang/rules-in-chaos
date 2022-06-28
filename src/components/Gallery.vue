@@ -6,7 +6,7 @@
         <ul>
             <li v-for="value in digitals" :key="value">
                 <a :href=value.original>
-                    <img :src=value.thumbs>
+                    <img :src= value.thumbs>
                 </a>
             </li>
         </ul>
@@ -41,8 +41,9 @@ export default {
     name:"Gallery",
     data() {
         return {
-            modelThumbs:["/ImgThumbNail/originAsteroid.jpg","/ImgThumbNail/starGas.jpg","/ImgThumbNail/normalAsteroid.jpg","/ImgThumbNail/scifi.jpg","/ImgThumbNail/m0.jpg"],
-            digitalThumbs:["/ImgThumbNail/backKnight copy.jpg","/ImgThumbNail/chaos.jpg","/ImgThumbNail/fuckFinal.jpg","/ImgThumbNail/wth.jpg","/ImgThumbNail/CSSGarden.jpg","/ImgThumbNail/Poster.jpg"],
+            rootThumb:"/ImgThumbNail/",
+            modelThumbs:["originAsteroid.jpg","starGas.jpg","normalAsteroid.jpg","scifi.jpg","m0.jpg"],
+            digitalThumbs:["backKnight copy.jpg","chaos.jpg","fuckFinal.jpg","wth.jpg","CSSGarden.jpg","Poster.jpg"],
             modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg"],
             digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg", "/ImgOriginal/wth.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/Poster.jpg"]
         }
@@ -50,12 +51,12 @@ export default {
     computed: {
         models() {
             return this.modelThumbs.map((itm, i) => {
-                return { thumbs: itm, original: this.modeloriginals[i] }
+                return { thumbs: this.rootThumb + itm, original: this.modeloriginals[i] }
             })
         },
         digitals() {
             return this.digitalThumbs.map((itm, i) => {
-                return { thumbs: itm, original: this.digitalOriginals[i] }
+                return { thumbs: this.rootThumb + itm, original: this.digitalOriginals[i] }
             })
         }
     }
@@ -82,7 +83,7 @@ li{
 }
 
 #videoItem{
-    width: 80%;
+    width: 95%;
 }
 
 ul{
