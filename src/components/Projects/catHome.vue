@@ -9,6 +9,9 @@
         <h2 class="projectSubTitle">
             Created during the 48-hour rct AI GAMEHACK 2021 and Won the Most Popular Prize
         </h2>
+        <p>
+            In collaboration with Yuqian Sun (Visual), Enduro Wang (Develop), Hong Zhang (Visual), Jiayu Wu (Audio) and Morty (Develop)
+        </p>
         <p>Github Repo Address: <a href="https://github.com/GameHack2021/GameHack2021-Unity">https://github.com/GameHack2021/GameHack2021-Unity</a>
         </p>
         <p>

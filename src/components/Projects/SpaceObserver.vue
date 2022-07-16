@@ -7,6 +7,9 @@
             A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from the Origin Space Company
         </h2>
         <p>
+            In collaboration with Zeyang Meng
+        </p>
+        <p>
             The animation is based on the real orbit data of the satellite.
         </p>
         <p>

@@ -1,5 +1,10 @@
 <template>
     <span id="projectList">
+        <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
+            <h2>Web AR for PurpleVerse in NFT.NYC</h2>
+            <p>A Web AR Application for Advanced Virtual Exhibition Experience</p>
+            <img class="projectImg" src="/ImgThumbNail/purpleLogo.png">
+        </button>
         <button v-on:click="this.$router.push('/Projects/VoidsResearch');" class="projectCard">
             <h2>Cosmic Voids Research</h2>
             <h3>Still in Progress...</h3>
@@ -9,7 +14,7 @@
         <button v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
             <h2>Data Visualization for Cosmic Voids</h2>
             <h3>Still in Progress...</h3>
-            <p>Using VR Technology to Create Immersive scene for cosmic voids</p>
+            <p>Using VR Technology to Create Immersive Scene for Cosmic Voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
         <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">

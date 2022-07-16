@@ -7,6 +7,9 @@
             A circuit designed with fundamental electronic components including timers, counters, flip-flops, decoders, and logic gates
         </h2>
         <p>
+            In collaboration with Zikai Wang
+        </p>
+        <p>
             Overall circuits:
         </p>
         <img style="image-rendering: pixelated;" src="\ImgThumbNail\DLDWhole.jpg">

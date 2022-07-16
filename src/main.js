@@ -16,6 +16,7 @@ import catHome from './components/Projects/catHome'
 import photonLab from './components/Projects/photonLab.vue'
 import smartContract from './components/Projects/smartContract.vue'
 import DLD from './components/Projects/DLD.vue'
+import purpleVerse from './components/Projects/purpleVerse.vue'
 
 const routes = [
     { path: "/:catchAll(.*)", component: AboutMe }, 
@@ -32,6 +33,7 @@ const routes = [
     { path: '/Projects/photonLab', component: photonLab }, 
     { path: '/Projects/smartContract', component: smartContract }, 
     { path: '/Projects/DLD', component: DLD }, 
+    { path: '/Projects/PurpleVerse', component: purpleVerse }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 
