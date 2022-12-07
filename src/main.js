@@ -17,6 +17,7 @@ import photonLab from './components/Projects/photonLab.vue'
 import smartContract from './components/Projects/smartContract.vue'
 import DLD from './components/Projects/DLD.vue'
 import purpleVerse from './components/Projects/purpleVerse.vue'
+import GNN from './components/Projects/GNN.vue'
 
 const routes = [
     { path: "/:catchAll(.*)", component: AboutMe }, 
@@ -34,6 +35,7 @@ const routes = [
     { path: '/Projects/smartContract', component: smartContract }, 
     { path: '/Projects/DLD', component: DLD }, 
     { path: '/Projects/PurpleVerse', component: purpleVerse }, 
+    { path: '/Projects/GNN', component: GNN }, 
     { path: '/AboutMe', component: AboutMe },
 ]
 

@@ -1,5 +1,11 @@
 <template>
     <span id="projectList">
+        <button v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
+            <h2>Graph Neural Networks for Voids</h2>
+            <h3>Still in Progress...</h3>
+            <p>Using Graph Neural Networks (GNN) to Produce Cosmological Inference from Void Properties</p>
+            <img class="projectImg" src="/ImgThumbNail/GNN.jpg">
+        </button>
         <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
             <h2>Web AR for PurpleVerse in NFT.NYC</h2>
             <p>A Web AR Application for Advanced Virtual Exhibition Experience</p>

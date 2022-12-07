@@ -42,9 +42,9 @@ export default {
     data() {
         return {
             rootThumb:"/ImgThumbNail/",
-            modelThumbs:["originAsteroid.jpg","starGas.jpg","normalAsteroid.jpg","scifi.jpg","m0.jpg"],
+            modelThumbs:["originAsteroid.jpg","starGas.jpg","normalAsteroid.jpg","scifi.jpg","m0.jpg", "GNN.jpg"],
             digitalThumbs:["backKnight copy.jpg","chaos.jpg","fuckFinal.jpg","wth.jpg","CSSGarden.jpg","Poster.jpg"],
-            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg"],
+            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg", "/ImgOriginal/void1.jpg"],
             digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg", "/ImgOriginal/wth.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/Poster.jpg"]
         }
     },
