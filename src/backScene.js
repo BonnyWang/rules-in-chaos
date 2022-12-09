@@ -250,6 +250,12 @@ function checkProgress(){
         entranceAnimation();
         animeBonnyAsteroid();
         baseAnimation();
+        if (mapp.checkRouteName() != "/" ){
+
+            toMain();
+        }
+
+
     }
 }
 
@@ -301,9 +307,6 @@ window.addEventListener('scroll', () =>{
     // console.log(scrollY + " " + sizes.height); 
 
     if(section == 1 && !changedSection){
-        changedSection = true;
-
-        mapp.hideEntrance();
         toMain();
     }
 
@@ -414,6 +417,9 @@ function fractionBaseAnim(){
 }
 
 function toMain(){
+    changedSection = true;
+    mapp.hideEntrance();
+
     scene.remove(asteroidBonny);
     scene.remove(reals[0]);
     scene.remove(reals[1]);

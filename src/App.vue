@@ -50,18 +50,22 @@ export default {
       const mainView = document.getElementById('mainView');
       mainView.scrollIntoView({ behavior: 'smooth' });
       this.hideEntrance();
+      
       toMain();
     },
     hideEntrance(){
       this.firstEnter = false;
+    },
+    checkRouteName() {
+      const rpath = this.$router.currentRoute._value.path;
+      return rpath;
     }
   },
   mounted(){
-    console.log( this.$route.path);
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0,0); 
 
-    this.playMusic()
+    this.playMusic();
   }
 }
 
