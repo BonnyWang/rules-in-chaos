@@ -29,6 +29,9 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/M-_IJ4WDqfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </li>
             <li id="videoItem">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/nJyXYPPJaok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li>
+            <li id="videoItem">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/fQhPaQzmvVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </li>
 
@@ -42,9 +45,9 @@ export default {
     data() {
         return {
             rootThumb:"/ImgThumbNail/",
-            modelThumbs:["originAsteroid.jpg","starGas.jpg","normalAsteroid.jpg","scifi.jpg","m0.jpg", "GNN.jpg"],
+            modelThumbs:["originAsteroid.jpg","starGas.jpg","normalAsteroid.jpg","scifi.jpg","m0.jpg", "GNN.jpg", "whiteDwarf.jpg", "void.jpg", "noise.png"],
             digitalThumbs:["backKnight copy.jpg","chaos.jpg","fuckFinal.jpg","wth.jpg","CSSGarden.jpg","Poster.jpg"],
-            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg", "/ImgOriginal/void1.jpg"],
+            modeloriginals: ["/ImgOriginal/originAsteroid.png","/ImgOriginal/starGas.png","/ImgOriginal/normalAsteroid.png","/ImgOriginal/scifi.png","/ImgOriginal/m0.jpg", "/ImgOriginal/void1.jpg", "/ImgOriginal/whiteDwarf.jpg",  "/ImgOriginal/void.jpg","/ImgOriginal/noise.png"],
             digitalOriginals:["/ImgOriginal/knightCombo.jpg","/ImgOriginal/chaos.jpg","/ImgOriginal/fuckFinal.jpg", "/ImgOriginal/wth.jpg","https://bonnymidterm.glitch.me","/ImgOriginal/Poster.jpg"]
         }
     },

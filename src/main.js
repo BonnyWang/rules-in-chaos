@@ -37,6 +37,11 @@ const routes = [
     { path: '/Projects/PurpleVerse', component: purpleVerse }, 
     { path: '/Projects/GNN', component: GNN }, 
     { path: '/AboutMe', component: AboutMe },
+    { path: '/arXivMLVoid', beforeEnter(to, from, next) {
+      // Put the full page URL including the protocol http(s) below
+      window.location.replace("https://arxiv.org/abs/2212.06860")
+      } 
+    },
 ]
 
 const router = createRouter({

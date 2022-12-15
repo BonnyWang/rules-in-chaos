@@ -6,17 +6,18 @@
             <p>Using Graph Neural Networks (GNN) to Produce Cosmological Inference from Void Properties</p>
             <img class="projectImg" src="/ImgThumbNail/GNN.jpg">
         </button>
+        <button v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
+            <h2>Machine learning cosmology from void properties</h2>
+            <h3>arXiv:2212.06860</h3>
+            <p>Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
+            <img class="projectImg" src="/ImgThumbNail/web.jpg">
+        </button>
         <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
             <h2>Web AR for PurpleVerse in NFT.NYC</h2>
             <p>A Web AR Application for Advanced Virtual Exhibition Experience</p>
             <img class="projectImg" src="/ImgThumbNail/purpleLogo.png">
         </button>
-        <button v-on:click="this.$router.push('/Projects/VoidsResearch');" class="projectCard">
-            <h2>Cosmic Voids Research</h2>
-            <h3>Still in Progress...</h3>
-            <p>Using Moment Network to Produce Likelihood-Free Inference of Cosmological Parameters Using Cosmic Voids' Properties</p>
-            <img class="projectImg" src="/ImgThumbNail/web.jpg">
-        </button>
+        
         <button v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
             <h2>Data Visualization for Cosmic Voids</h2>
             <h3>Still in Progress...</h3>

@@ -4,10 +4,9 @@
             Cosmic Voids Research
         </h1>
         <h2 class="projectSubTitle">
-            Using Moment Network to Produce Likelihood-Free Inference of Cosmological Parameters Using Cosmic Voids' Properties
+            Machine learning cosmology from void properties
         </h2>
         <p style="color:#ff991c">
-            Still in Progress...
         </p>
         <p>
             Cosmic voids are the vast spaces between filaments in the universe that contain few or no galaxies. Their unique low-density property makes it easy to  study and predict other hard-to-measure astrophysical parameters which would help scientists better understand the universe.
