@@ -6,7 +6,7 @@
     </section>
       
     <section id="mainView" v-if="loaded">
-        
+        <button v-on:click="playMusic" ref="playB" id="playBgm">  </button>
         <span id="Navigation">
           <h1 id="siteTitle">WELCOME</h1>
             <router-link to="/AboutMe" id="NavButton">About Me</router-link>
@@ -44,7 +44,13 @@ export default {
   methods:{
  
     playMusic:function(){
-      this.$refs.mbgm.play();
+      if(this.$refs.mbgm.paused){
+          this.$refs.mbgm.play();
+          this.$refs.playB.style.border = "3px solid red";
+        }else{
+          this.$refs.mbgm.pause();
+          this.$refs.playB.style.border = "none";
+        }
     },
     toMyWorld(){
       const mainView = document.getElementById('mainView');
@@ -65,13 +71,33 @@ export default {
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0,0); 
 
-    this.playMusic();
+    // this.playMusic();
   }
 }
 
 </script>
 
 <style>
+  #playBgm{
+    position: fixed;
+    overflow: visible;
+    top: 5%;
+    right: 5%;
+    border: none;
+    width: 10px;
+    height: 10px;
+    background-image: url('/ImgThumbNail/musicIcon.png');;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+
+    padding: 12px;
+    
+  }
+  #playBgm:hover{
+    border: 3px solid red;
+  }
   canvas{
     position: fixed;
     top: 0;

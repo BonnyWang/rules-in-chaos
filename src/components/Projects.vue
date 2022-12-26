@@ -1,63 +1,78 @@
 <template>
+    
     <span id="projectList">
+        <h3 class="categoryTitle">
+            Cosmology:
+        </h3>
+        <button v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
+            <h2>Machine learning cosmology from void properties</h2>
+            <h3>arXiv:2212.06860 
+            <br>
+            Submitted to ApJ</h3>
+            <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
+            <img class="projectImg" src="/ImgThumbNail/web.jpg">
+        </button>
         <button v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
             <h2>Graph Neural Networks for Voids</h2>
             <h3>Still in Progress...</h3>
-            <p>Using Graph Neural Networks (GNN) to Produce Cosmological Inference from Void Properties</p>
+            <p>Use GNN to Produce Cosmological Inference from Void Properties</p>
             <img class="projectImg" src="/ImgThumbNail/GNN.jpg">
         </button>
-        <button v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
-            <h2>Machine learning cosmology from void properties</h2>
-            <h3>arXiv:2212.06860</h3>
-            <p>Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
-            <img class="projectImg" src="/ImgThumbNail/web.jpg">
-        </button>
-        <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
-            <h2>Web AR for PurpleVerse in NFT.NYC</h2>
-            <p>A Web AR Application for Advanced Virtual Exhibition Experience</p>
-            <img class="projectImg" src="/ImgThumbNail/purpleLogo.png">
-        </button>
-        
         <button v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
             <h2>Data Visualization for Cosmic Voids</h2>
             <h3>Still in Progress...</h3>
-            <p>Using VR Technology to Create Immersive Scene for Cosmic Voids</p>
+            <p>Use VR Technology to Create Immersive Scene for Cosmic Voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
-            <h2>Space Telescope Data Center</h2>
-            <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space Company</p>
-            <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">
+        <h3 class="categoryTitle">
+            Game:
+        </h3>
+        <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
+            <h2>Web AR for PurpleVerse in NFT.NYC</h2>
+            <p>A Web AR Application for Augmented Exhibition Experience</p>
+            <img class="projectImg" src="/ImgThumbNail/purpleLogo.png">
         </button>
         <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
             <h2>Space Persona</h2>
             <p>A Personality Game About Finding Your Position in the Space Mining Era</p>
             <img class="projectImg" src="/ImgThumbNail/spacePersona.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Projects/GravityGame');" class="projectCard">
-            <h2>World of Gravity</h2>
-            <p>A Game Created by Unity to Explore the Effect of Gravity</p>
-            <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
-        </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
-            <p>A 2D platformer and simulation game about reviving people’s love for cats in a cyberpunk world</p>
+            <p>A 2D platformer and simulation game about delivering cats to people in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
         </button>
+        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
+            <h2>Space Telescope Data Center</h2>
+            <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space</p>
+            <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">
+        </button>
+
         <button class="projectCard" v-on:click="this.$router.push('/Projects/DLD');">
             <h2>Digital Logic Design: “Whac-a-Mole”</h2>
-            <p>A circuit designed with fundamental electronic components including timers, counters, flipflops, decoders, and logic gates</p>
+            <p>A circuit designed with fundamental electronic components</p>
             <img class="projectImg" src="/ImgThumbNail/DLDShow.jpg">
         </button>
+
+        <button v-on:click="this.$router.push('/Projects/GravityGame');" class="projectCard">
+            <h2>World of Gravity</h2>
+            <p>A Game Created by to Explore the Effect of Gravity by N-body Simulation</p>
+            <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
+        </button>
+
+
+        <h3 class="categoryTitle">
+            Other:
+        </h3>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
             <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
-            <p>Using Tensorflow with the GRU architecture to Autogenerate Chinese Poems</p>
+            <p>Using the GRU architecture to Autogenerate Chinese Poems</p>
             <img class="projectImg" src="/ImgThumbNail/chinesePoem.jpg">
         </button>
         
         <button class="projectCard" v-on:click="this.$router.push('/Projects/photonLab');">
             <h2>PhotonLab Android App</h2>
-            <p>Android App Developed to Connect and Control the PhotonLab Smart Lights</p>
+            <p>Android App for Controlling the PhotonLab Smart Light System</p>
             <img class="projectImg" src="/ImgThumbNail/PhotonLab.jpg">
         </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/smartContract');">
@@ -122,6 +137,13 @@ export default {
     width: 50%;
 }
 
+.categoryTitle{
+    padding: 10px;
+    border-left: 1px red solid;
+    width:100%;
+    
+}
+
 @media only screen and (max-width: 1000px) {
 
     .projectCard{
@@ -153,6 +175,7 @@ export default {
     li{
         width: 45%;
     }
+
 }
 
 </style>

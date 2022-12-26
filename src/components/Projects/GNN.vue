@@ -3,23 +3,11 @@
         <h1 class="projectTitle" :ref="allrefs[0]">
             Graph Neural Networks for Cosmic Voids
         </h1>
-        <br>
-        <br>
-        <br>
         <h2 class="projectSubTitle">
             Use Graph Neural Networks (GNN) to infer cosmological parameters with void properties
         </h2>
-        <br>
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>    
         
+        <br>   
         <button v-on:click="scrollToElement()" > 
             <i class="arrow down"></i>
         </button>
@@ -32,43 +20,23 @@
         <p>
             If actual surveys we got looks similar to our simulations, then we know we may be on the right path.
         </p>
-        <img src="/ImgOriginal/SimVsSurvey.png">
-
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>   
+        <img src="/ImgOriginal/SimVsSurvey.png"> 
 
         <h3 :ref="allrefs[2]">
             <big>What about the initial conditions for those simulations/models?</big> 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             Simulation-based Inference
         </h3>
 
         <p>
             AKA Likelihood-free Inference
         </p>
-        <br>    
-        <br>
  
         <p>
             <big>  Use observation (output) of a simulation to infer it's initial parameter.</big>
         </p>
-        <br>    
-        <br>
-        <br>    
-        <br>   
-        <br>    
-        <br>
-        <br>   
+  
         <h3 :ref="allrefs[3]">
-            Related works:
+            <big> Related works: </big>
         </h3>
         <p>
             <a href="https://arxiv.org/abs/2212.06860"><i>Machine learning cosmology from void properties</i></a> arXiv:2212.06860
@@ -106,20 +74,12 @@
         <img style="width:100%" src="/ImgOriginal/GNNeq.jpg">
         https://arxiv.org/pdf/2204.13713.pdf
         <h2 :ref="allrefs[6]">
-            Results:
+            Current Result:
         </h2>
         <img src="/ImgOriginal/GNN1000voids.png">
         <p>
             Using only 1000 voids from each catalog (the whole catalogs have 11,000 voids on average)
-        </p>
-        <br>
-        <br>   
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>   
-        <br>   
+        </p> 
         <h2 :ref="allrefs[7]">
             What's next?
         </h2>
@@ -140,14 +100,7 @@
                 - Discover new equations with symbolic regression  
             </li>
         </ul>
-             <br>
-        <br>   
-        <br>    
-        <br>
-        <br>    
-        <br>
-        <br>   
-        <br>   
+             <br> 
     </span>
   
 </template>
@@ -188,18 +141,6 @@ a{
 a:hover{
     color: red;
     text-decoration: underline;
-}
-h2{
-    text-align: center;
-}
-h3{
-    text-align: center;
-}
-h1{
-    text-align: center;
-}
-p{
-    text-align: center;
 }
 
 button{
