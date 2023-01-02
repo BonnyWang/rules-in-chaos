@@ -27,6 +27,12 @@
         <h3 class="categoryTitle">
             Game:
         </h3>
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
+            <h2>Home Cat</h2>
+            <h3>Available Online</h3>
+            <p>A 2D platformer and simulation game about reviving people’s love by delivering cats in a cyberpunk world</p>
+            <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
+        </button>
         <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
             <h2>Web AR for PurpleVerse in NFT.NYC</h2>
             <p>A Web AR Application for Augmented Exhibition Experience</p>
@@ -34,13 +40,9 @@
         </button>
         <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
             <h2>Space Persona</h2>
+            <h3>Available Online</h3>
             <p>A Personality Game About Finding Your Position in the Space Mining Era</p>
-            <img class="projectImg" src="/ImgThumbNail/spacePersona.jpg">
-        </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
-            <h2>Home Cat</h2>
-            <p>A 2D platformer and simulation game about delivering cats to people in a cyberpunk world</p>
-            <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
+            <img class="projectImg" src="/ImgThumbNail/spacePersona0.png">
         </button>
         <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
             <h2>Space Telescope Data Center</h2>

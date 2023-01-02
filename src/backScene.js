@@ -4,6 +4,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
 
+const modelPath = "/models/"
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x121212);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -88,7 +90,7 @@ let fractionLoadProgress = 0;
 let cutie;
 function loadCutie(){
     const loader = new GLTFLoader();
-    loader.load( '/cutie.glb', function ( gltf ) {
+    loader.load( modelPath + '/cutie.glb', function ( gltf ) {
 
         cutie = gltf.scene;
         cutie.position.z = -1;
@@ -125,7 +127,7 @@ let reals = [];
 
 function loadReal(){
     const real_Loader = new GLTFLoader();
-    real_Loader.load( '/realAsteroid.glb', function ( gltf ) {
+    real_Loader.load( modelPath + '/realAsteroid.glb', function ( gltf ) {
 
         gltf.scene.scale.x = 0.5;
         gltf.scene.scale.y = 0.5;
@@ -164,7 +166,7 @@ let asteroidBonny;
 let mixer;
 function loadAsteroidBonny(){
     const ssLoader = new GLTFLoader();
-    ssLoader.load( '/asteroidBonny.glb', function ( gltf ) {
+    ssLoader.load( modelPath + '/asteroidBonny.glb', function ( gltf ) {
         asteroidBonny =  gltf.scene;
         asteroidBonny.scale.x = 1;
         asteroidBonny.scale.y = 1;
@@ -209,7 +211,7 @@ let asteroidFraction;
 
 function loadFraction(){
     const loader = new GLTFLoader();
-    loader.load( '/asteroidBonnyFraction.glb', function ( gltf ) {
+    loader.load( modelPath +'/asteroidBonnyFraction.glb', function ( gltf ) {
         asteroidFraction = gltf.scene;
         asteroidFraction.scale.x =0.2;
         asteroidFraction.scale.y =0.2;
