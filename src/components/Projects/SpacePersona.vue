@@ -10,19 +10,24 @@
         <button class="playOnline"><b>Click Here to Play!</b></button>
         </a>
         <p style="color:aqua">
-            (*Only available for mobile phones. If you do not have a mobile device with you, use the inspection mode of your browser and adjust your resolution!)
+            (*Only available for mobile phones. If you do not have a mobile device with you, use the inspection mode of your browser and change the dimensions!)
         </p>
         <h3 class="projectSubTitle">
             A Personality Game About Finding Your Position in the Space Mining Era
+            <br>
+            Available in both Chinese and English
         </h3>
-        <h3 class="projectSubTitle">
-            Available both in Chinese and English
+        <h3>
+            Background:
         </h3>
         <p>
-            According to the Kardashev scale, Carl Sagan believed we were still a Type 0.7 civilization. That means, there is much far more energy for us to exploit. While we have focused on using resources on Earth, it is time for us to explore beyond our own planet!
+            According to the Kardashev scale, astronomer Carl Sagan believes we are still a Type 0.7 civilization. That means the energy we have exploited is very limited. While we have focused on using resources on Earth, there is much more we can explore in outer space.
             <br>
             <br>
-            Asteroids contain abundant resources like heavy metals, which are rare on Earth but crutial for industrial uses. Space Persona would put you in a future era when space mining had become one of the major activities of the society. By answering several dedicated questions, Space Persona would generate you a specific guide based on your personality and help you find your way in the space mining era.
+            Asteroids contain abundant resources like heavy metals, which are rare and hard to mine on Earth, but crucial for industrial uses. One single asteroid like 16 Psyche could be estimated up to 10 Quintillion dollars, more than the current global economy. NASA has planned the Psyche mission to study this particular asteroid. Asteroids in near-Earth orbits also contain tremendous values.
+            <br>
+            <br>
+            Space Persona would put you in a future era when space mining had become one of the major activities of society. By answering several dedicated questions, Space Persona would generate a specific guide based on your personality and help you find your way in the space mining era.
         </p>
         <h3>
             Sample screenshots:

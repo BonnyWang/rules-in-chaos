@@ -9,12 +9,18 @@
         <p>
             Github Repo Address: <a href="https://github.com/BonnyWang/ECE455_CyberSecurity/tree/main/FinalProject">https://github.com/BonnyWang/ECE455_CyberSecurity/tree/main/FinalProject</a>
         </p>
+        <h3>
+            Background:
+        </h3>
         <p>
             As cryptocurrencies are gaining popularity and involving more capital, the related security issues need to be examined. We are especially interested in the possible vulnerabilities of the smart contracts on Ethereum used. Since smart contracts cannot be changed after their deployment, the integrity and security of the codes deserve more attention to be checked. This project tends to study two of the nine commonly known smart contract vulnerabilities: reentrancy and unhandled exceptions. The other seven common vulnerabilities – access control, arithmetic, denial of service, bad randomness, front running, time manipulation, and short address – are not discussed in the scope of this project due to our time constraints. We developed a program to test these two vulnerabilities for smart contracts and hope to protect them from related attacks.
         </p>   
         <p>
             As hundreds of different cryptocurrencies are gaining popularity, smart contract vulnerabilities begin to become a security concern. Once the smart contract is deployed on the Ethereum network, it cannot be changed. Therefore, analyzing them before the deployment is even more important compared to traditional programs. Reentrancy attacks are one of the common threats in the Ethereum blockchain. They are also the reason behind the famous DAO attack. The reentrancy attacks occur when an adversary leverages an external call of a smart contract. Due to certain patterns in the code, they can force the contract to execute additional code and utilize a fallback function to call back to itself. This could result in draining all the assets of one address. Another vulnerability we aim to detect is unchecked exceptions. Programmers too often assume the successful execution of the low-level functions that do not automatically interrupt the program execution on failure. The unchecked low-level call return values can lead to unexpected behavior in the program and could make it vulnerable to malicious users trying to tamper with the data.
-        </p>     
+        </p>
+        <h3>
+            Instruction:
+        </h3>     
         <p>
             <u> Use the following line to install the library:</u><br>
             $ pip install nltk<br>
@@ -28,12 +34,16 @@
             Related Lines: 29<br>
             Vulnerable Functions: Collect<br>
         </p>
+        <h3>
+            Dataset Used:
+        </h3>
         <p>
-            Dataset Used:<br>
             We are using the <a href="https://github.com/smartbugs/smartbugs/tree/master/dataset"> SB curated dataset</a> under the <a href="https://github.com/smartbugs/smartbugs">SmartBugs: A Framework to Analyze Solidity Smart Contracts</a>. It is a collection of vulnerable Solidity smart contracts organized according to the DASP taxonomy, containing 143 annotated contracts with 208 tagged vulnerabilities that can be used to evaluate the accuracy of analysis tools.
         </p>
+        <h3>
+            Tech Analysis:
+        </h3>
         <p>
-            Tech Analysis:<br>
             <u>Reentrancy:</u><br>
             The reentrancy attacks are mostly related to call function. Other functions like send and transfer are considered safer since they have a gas limit. There are two types of reentrancy attacks: single-function and cross-function attacks. A single-function attack occurs when the adversary attempts to recursively call the vulnerable function. A cross-function attack occurs when the target function calls another function that the adversary desires to exploit.<br> 
             <br>
@@ -54,8 +64,10 @@
 
 
         </p>
+        <h3>
+            Reference:
+        </h3>
         <p>
-            Reference:<br>
             https://github.com/enzymefinance/oyente<br>
             https://github.com/smartbugs/smartbugs<br>
             https://dasp.co/<br>

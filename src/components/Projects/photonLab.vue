@@ -13,9 +13,9 @@
         <img style="width:20%" src="\ImgThumbNail\photo1.png">
         <img style="width:20%" src="\ImgThumbNail\photon3.png">
         <img style="width:20%" src="\ImgThumbNail\photon4.png">
-        <p>
+        <h3>
             Video for PhotonLab Light:
-        </p>
+        </h3>
         <iframe width="60%" height="315" src="https://www.youtube.com/embed/y5nYd6GKnjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </span>
   

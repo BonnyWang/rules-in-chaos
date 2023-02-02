@@ -18,6 +18,7 @@ import smartContract from './components/Projects/smartContract.vue'
 import DLD from './components/Projects/DLD.vue'
 import purpleVerse from './components/Projects/purpleVerse.vue'
 import GNN from './components/Projects/GNN.vue'
+import worldMaking from './components/Projects/worldMaking.vue'
 
 const routes = [
     { path: "/:catchAll(.*)", component: AboutMe }, 
@@ -36,6 +37,7 @@ const routes = [
     { path: '/Projects/DLD', component: DLD }, 
     { path: '/Projects/PurpleVerse', component: purpleVerse }, 
     { path: '/Projects/GNN', component: GNN }, 
+    { path: '/Projects/worldMaking', component: worldMaking }, 
     { path: '/AboutMe', component: AboutMe },
     { path: '/arXivMLVoid', beforeEnter(to, from, next) {
       // Put the full page URL including the protocol http(s) below

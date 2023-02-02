@@ -10,22 +10,40 @@
             <button class="playOnline"><b>Click Here to Play!</b></button>
         </a>
         <p>
-            In collaboration with Yuqian Sun (Visual Artist), Enduro Wang (Developer), Hong Zhang (Visual Artist), Jiayu Wu (Musician), Morty (Developer) and Xuan (Writer)
+            In collaboration with Yuqian Sun (Visual Artist), Enduro Wang (Developer), Hong Zhang (Visual Artist), Jiayu Wu (Musician), Morty (Developer) and Xuan (Desginer/Writer)
         </p>
         <p>Github Repo Address: <a href="https://github.com/GameHack2021/GameHack2021-Unity">https://github.com/GameHack2021/GameHack2021-Unity</a>
         </p>
+        <h3>
+            Background:
+        </h3>
         <p>
-            In the cyberpunk future world, the protagonist, who is down on their luck, encounters a cat, a species that hasn't been seen in a long time, and is drawn to its cute appearance. As a result, the cat is brought home by the protagonist. The protagonist can communicate with the cat through a translator at home, but due to the limitations of the translator, the conversations are not always logical. In the process of talking with the cat, the protagonist's feelings for the cat become stronger and stronger, but because the cat can generate many kittens, the protagonist has to send the kittens to other people's homes. In the process of sending cats, the protagonist also understands more and more about the concept of home. From thinking that their home was just a dilapidated basement to a warm place where a cat is together. At the same time, in the process of sending cats, he also hopes to let others feel the healing effect that cats can bring, and create a warm home for them in the cold cyberpunk world.
+            In the cyberpunk future world, you encounter a cat, a creature that hasn't been seen in a long time. You are attracted to its cute appearance. Therefore, you brought the cat to your home. You can only communicate freely with the cat through a translator at home. Due to the limitations of the translator, the conversations are not always logical. As you chat more with the cat, your feelings for the cat become stronger. However, because the cat generates so many kittens, you have to send the kittens to other people's homes. In the process of sending cats, you understand better the concept of home. From thinking that home was just a broken basement to a warm place you share with the cat. At the same time, you hope to let others feel the same healing effect that cats can bring, reviving people's emotions in this cold cyberpunk world.
         </p>
+        <h3>
+            Technologies Used:
+        </h3>
         <p>
+            Unity Game Engine and GPT-3 API
+            <br>
+            <br>
+            * The initial backend which connected to the rct AI's API is no longer available. GPT-3 is used instead for generating the cat's reply in the game. The use of GPT-3 enables full freedom of conversations with the cat.
+        </p>
+        <h3>
+            Core Loop:
+        </h3>
+        <p>
+            Chat to build up your connection with the cat -> Go outside -> Find doors to people's homes -> Try to deliver kittens -> Return to the first step
+        </p>
+        <h3>
             Game concept art:
-        </p>
+        </h3>
         <img style="image-rendering: pixelated;" src="\ImgThumbNail\endCG.jpg">
         <img style="image-rendering: pixelated;" src="\ImgThumbNail\OpenCG.jpeg">
-        <p>
-            Game play video:
-        </p>
-        <iframe width="80%" height="315" src="https://www.youtube.com/embed/z6ZBu2krwTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>
+            Gameplay video:
+        </h3>
+        <iframe width="80%" height="315" src="https://www.youtube.com/embed/Z7h5IpA_8do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
     </span>
   

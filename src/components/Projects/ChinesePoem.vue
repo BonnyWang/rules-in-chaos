@@ -9,9 +9,9 @@
         <p>
            Github: <a href="https://github.com/BonnyWang/ECE467-Natural_Language_Processing/tree/main/3-Final_Project">https://github.com/BonnyWang/ECE467-Natural_Language_Processing/tree/main/3-Final_Project</a>
         </p>
-        <p>
+        <h3>
            Sample Outputs:
-        </p>
+        </h3>
         <p>
             title:橫吹曲辭 巫山高<br>
             authors:杜甫<br>
@@ -41,11 +41,14 @@
 
         </p>
         <br>
-        <p>
+        <h3>
             Network Architecture:
-        </p>
+        </h3>
         <img src="https://miro.medium.com/max/1400/1*jhi5uOm9PvZfmxvfaCektw.png">
         <figcaption>Image Source: https://miro.medium.com/max/1400/1*jhi5uOm9PvZfmxvfaCektw.png</figcaption>
+        <h3>
+            Description:
+        </h3>
         <p>
             The dataset for this project is obtained from https://github.com/chinese-poetry/chinese-poetry. In the JSON folder, Poet.tang.0.json, Poet.tang.1000.json, Poet.tang.2000.json, Poet.tang.3000.json are arbitrarily selected to be the datasets of the project.
 

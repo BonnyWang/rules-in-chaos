@@ -27,6 +27,11 @@
         <h3 class="categoryTitle">
             Game:
         </h3>
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/worldMaking');">
+            <h2>Worldmaking Class Blog</h2>
+            <p>A Class Blog Created for <i>FA-327-1 Computational Studio: Simulated</i> to Record My Journey in Virtual Worldmaking</p>
+            <img class="projectImg" src="/ImgThumbNail/Noise.png">
+        </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
             <h3>Available Online</h3>
