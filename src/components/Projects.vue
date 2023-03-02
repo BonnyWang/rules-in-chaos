@@ -27,10 +27,11 @@
         <h3 class="categoryTitle">
             Game:
         </h3>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/worldMaking');">
-            <h2>Worldmaking Class Blog</h2>
-            <p>A Class Blog Created for <i>FA-327-1 Computational Studio: Simulated</i> to Record My Journey in Virtual Worldmaking</p>
-            <img class="projectImg" src="/ImgThumbNail/Noise.png">
+        <button class="projectCard" v-on:click="this.$router.push('/Projects/rubiks');">
+            <h2>WebGL Rubik's Cube</h2>
+            <h3>Available Online</h3>
+            <p>An Online Rubik's Cube Built with WebGL and GLSL</p>
+            <img class="projectImg" src="/ImgThumbNail/Rubiks.png">
         </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
