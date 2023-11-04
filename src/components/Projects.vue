@@ -8,7 +8,7 @@
             <h2>Machine learning cosmology from void properties</h2>
             <h3>arXiv:2212.06860 
             <br>
-            Submitted to ApJ</h3>
+            Published on ApJ</h3>
             <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
             <img class="projectImg" src="/ImgThumbNail/web.jpg">
         </button>
