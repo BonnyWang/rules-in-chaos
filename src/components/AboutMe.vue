@@ -13,13 +13,13 @@
             Center for Computational Astrophysics, Flatiron Institute (Guest Researcher)
         </h3>
         <h3>
-            The Cooper Union (Master Electrical Engineering Student)
+            Carnegie Mellon University (Master of Entertainment Technology)
         </h3>
         <h3>
             <mark class="red">Current Location:</mark> 
         </h3>
         <h3>
-            New York, NY
+            Pittsburgh, PA
         </h3>
 
         <br>
@@ -27,7 +27,7 @@
            <mark class="red">Contact:</mark>
         </h3>
         <h3 style="color:purple">
-           wang27@cooper.edu
+           yuew7@andrew.cmu.edu
         </h3>
     </span>
   

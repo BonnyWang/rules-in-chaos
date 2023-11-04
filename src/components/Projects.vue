@@ -31,7 +31,7 @@
             <h2>WebGL Rubik's Cube</h2>
             <h3>Available Online</h3>
             <p>An Online Rubik's Cube Built with WebGL and GLSL</p>
-            <img class="projectImg" src="/ImgThumbNail/Rubiks.png">
+            <img class="projectImg" src="/ImgThumbNail/rubiks.png">
         </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>

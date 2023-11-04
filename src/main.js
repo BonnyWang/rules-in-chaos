@@ -41,7 +41,7 @@ const routes = [
     { path: '/AboutMe', component: AboutMe },
     { path: '/arXivMLVoid', beforeEnter(to, from, next) {
       // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://arxiv.org/abs/2212.06860")
+      window.location.replace("https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6")
       } 
     },
 ]
