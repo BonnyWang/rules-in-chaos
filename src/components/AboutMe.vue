@@ -10,10 +10,10 @@
             <mark class="red">Affiliations:</mark> 
         </h3>
         <h3>
-            Center for Computational Astrophysics, Flatiron Institute (Guest Researcher)
+            Carnegie Mellon University (Master of Entertainment Technology)
         </h3>
         <h3>
-            Carnegie Mellon University (Master of Entertainment Technology)
+            Center for Computational Astrophysics, Flatiron Institute (Guest Researcher)
         </h3>
         <h3>
             <mark class="red">Current Location:</mark> 
