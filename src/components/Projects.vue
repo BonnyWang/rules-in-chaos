@@ -47,18 +47,25 @@
         <h3 class="categoryTitle">
             Game:
         </h3>
+         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
+            <h2>Home Cat</h2>
+            <h3>Available Online</h3>
+            <p>A 2D platformer and simulation game about reviving people’s love by delivering cats in a cyberpunk world</p>
+            <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
+        </button>
+         <button class="projectCard" v-on:click="this.$router.push('/Projects/BVW');">
+            <h2>Building Virtual World</h2>
+            <h3>CMU ETC Coursework</h3>
+            <p>Video game worlds created in just one/two weeks with a variety of hardwares and technologies.</p>
+            <img class="projectImg" src="https://festival.etc.cmu.edu/2023/wp-content/uploads/2023/11/FestivalLogo-small-768x478.png">
+        </button>
         <button class="projectCard" v-on:click="this.$router.push('/Projects/rubiks');">
             <h2>WebGL Rubik's Cube</h2>
             <h3>Available Online</h3>
             <p>An Online Rubik's Cube Built with WebGL and GLSL</p>
             <img class="projectImg" src="/ImgThumbNail/rubiks.png">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
-            <h2>Home Cat</h2>
-            <h3>Available Online</h3>
-            <p>A 2D platformer and simulation game about reviving people’s love by delivering cats in a cyberpunk world</p>
-            <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
-        </button>
+       
         <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
             <h2>Web AR for PurpleVerse in NFT.NYC</h2>
             <p>A Web AR Application for Augmented Exhibition Experience</p>

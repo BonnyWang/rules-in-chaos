@@ -19,6 +19,7 @@ import DLD from './components/Projects/DLD.vue'
 import purpleVerse from './components/Projects/purpleVerse.vue'
 import GNN from './components/Projects/GNN.vue'
 import rubiks from './components/Projects/rubiks.vue'
+import BVW from './components/Projects/BVW.vue'
 
 const routes = [
     { path: "/:catchAll(.*)", component: AboutMe }, 
@@ -38,6 +39,7 @@ const routes = [
     { path: '/Projects/PurpleVerse', component: purpleVerse }, 
     { path: '/Projects/GNN', component: GNN }, 
     { path: '/Projects/rubiks', component: rubiks }, 
+    { path: '/Projects/BVW', component: BVW }, 
     { path: '/AboutMe', component: AboutMe },
     { path: '/arXivMLVoid', beforeEnter(to, from, next) {
       // Put the full page URL including the protocol http(s) below
