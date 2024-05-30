@@ -1,22 +1,30 @@
 <template>
     
     <span id="projectList">
-        <h3 class="categoryTitle">
-            Astronomy Related:
-        </h3>
-        <button v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
+        <div class="TagZone">
+        <button class="Tag" v-on:click="selectAll">
+            All
+        </button>
+        <button class="Tag" v-on:click="selectAstro">
+            Astronomy
+        </button>
+        <button class="Tag" v-on:click="selectGame">
+            Game
+        </button>
+        <button class="Tag" v-on:click="selectOther">
+            Other
+        </button>
+        <br>
+        </div>
+        
+        <button v-if="Astro" v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
             <h2>Data Visualization for Cosmic Voids</h2>
             <h3>Mentioned in <em>Scientific American</em></h3>
             <p>Use MR Technology to Create Immersive Scene for Cosmic Voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
-        <button v-on:click="this.$router.push('/Moonsters');" class="projectCard">
-            <h2>Moonsters Project</h2>
-            <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
-            <p>A virtual reality game prototype of NASA’s VIPER mission </p>
-            <img class="projectImg" src="https://www.etc.cmu.edu/wp-content/uploads/2013/08/logo_LightBackground.png">
-        </button>
-        <button v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
+        
+        <button v-if="Astro" v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
             <h2>Machine learning cosmology from void properties</h2>
             <h3>arXiv:2212.06860 
             <br>
@@ -24,7 +32,7 @@
             <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
             <img class="projectImg" src="/ImgThumbNail/web.jpg">
         </button>
-        <button v-on:click="this.$router.push('/arXivVoidGalaxy');" class="projectCard">
+        <button v-if="Astro" v-on:click="this.$router.push('/arXivVoidGalaxy');" class="projectCard">
             <h2>Cosmology from one galaxy in voids?</h2>
             <h3>arXiv:2405.04447
                 <br>
@@ -32,85 +40,86 @@
             <p>Bonny Y. Wang, Alice Pisani</p>
             <img class="projectImg" src="https://cdn.mos.cms.futurecdn.net/vamaoFeP8FDSfCYookG6qK.jpg">
         </button>
-        <button v-on:click="this.$router.push('/DREAMS');" class="projectCard">
+        <button v-if="Game" v-on:click="this.$router.push('/Moonsters');" class="projectCard">
+            <h2>Moonsters Project</h2>
+            <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
+            <p>A virtual reality game prototype of NASA’s VIPER mission </p>
+            <img class="projectImg" src="https://www.etc.cmu.edu/wp-content/uploads/2013/08/logo_LightBackground.png">
+        </button>
+
+        <button v-if="Astro" v-on:click="this.$router.push('/DREAMS');" class="projectCard">
             <h2>The DREAMS Project</h2>
             <h3>Core Team Member</h3>
             <p>DaRk mattEr and Astrophysics with Machine learning and Simulations</p>
             <img class="projectImg" src="https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=100w%20100w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=300w%20300w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=500w%20500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=750w%20750w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1000w%201000w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1500w%201500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png">
         </button>
-        <button v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
+        <button v-if="Astro" v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
             <h2>Graph Neural Networks for Voids</h2>
             <h3>Still in Progress...</h3>
             <p>Use GNN to Produce Cosmological Inference from Void Properties</p>
             <img class="projectImg" src="/ImgThumbNail/GNN.jpg">
         </button>
-        <h3 class="categoryTitle">
-            Game:
-        </h3>
-         <button class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
+         <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
             <h3>Available Online</h3>
             <p>A 2D platformer and simulation game about reviving people’s love by delivering cats in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
         </button>
-         <button class="projectCard" v-on:click="this.$router.push('/Projects/BVW');">
+         <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/BVW');">
             <h2>Building Virtual World</h2>
             <h3>CMU ETC Coursework</h3>
             <p>Video game worlds created in just one/two weeks with a variety of hardwares and technologies.</p>
             <img class="projectImg" src="https://festival.etc.cmu.edu/2023/wp-content/uploads/2023/11/FestivalLogo-small-768x478.png">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/rubiks');">
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/rubiks');">
             <h2>WebGL Rubik's Cube</h2>
             <h3>Available Online</h3>
             <p>An Online Rubik's Cube Built with WebGL and GLSL</p>
             <img class="projectImg" src="/ImgThumbNail/rubiks.png">
         </button>
        
-        <button v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
+        <button v-if="Game"  v-on:click="this.$router.push('/Projects/PurpleVerse');" class="projectCard">
             <h2>Web AR for PurpleVerse in NFT.NYC</h2>
             <p>A Web AR Application for Augmented Exhibition Experience</p>
             <img class="projectImg" src="/ImgThumbNail/purpleLogo.png">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
+        <button v-if="Game" v-on:click="this.$router.push('/Projects/SpacePersona');" class="projectCard">
             <h2>Space Persona</h2>
             <h3>Available Online</h3>
             <p>A Personality Game About Finding Your Position in the Space Mining Era</p>
             <img class="projectImg" src="/ImgThumbNail/spacePersona0.png">
         </button>
-        <button v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
+        <button v-if="Game" v-on:click="this.$router.push('/Projects/SpaceObserver');" class="projectCard">
             <h2>Space Telescope Data Center</h2>
             <p>A Web Platform for Showing Data Obtained by Yangwang-1 Satellite from Origin Space</p>
             <img class="projectImg" src="/ImgThumbNail/skyObserver.jpg">
         </button>
 
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/DLD');">
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/DLD');">
             <h2>Digital Logic Design: “Whac-a-Mole”</h2>
             <p>A circuit designed with fundamental electronic components</p>
             <img class="projectImg" src="/ImgThumbNail/DLDShow.jpg">
         </button>
 
-        <button v-on:click="this.$router.push('/Projects/GravityGame');" class="projectCard">
+        <button v-if="Game"  v-on:click="this.$router.push('/Projects/GravityGame');" class="projectCard">
             <h2>World of Gravity</h2>
             <p>A Game Created by to Explore the Effect of Gravity by N-body Simulation</p>
             <img class="projectImg" src="/ImgThumbNail/gravityGame.jpg">
         </button>
 
 
-        <h3 class="categoryTitle">
-            Other:
-        </h3>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
+        <button v-if="Other" class="projectCard" v-on:click="this.$router.push('/Projects/ChinesePoem');">
             <h2>AI for Writing Chinese Poems from the Tang Dynasty</h2>
             <p>Using the GRU architecture to Autogenerate Chinese Poems</p>
             <img class="projectImg" src="/ImgThumbNail/chinesePoem.jpg">
         </button>
         
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/photonLab');">
+        <button v-if="Other" class="projectCard" v-on:click="this.$router.push('/Projects/photonLab');">
             <h2>PhotonLab Android App</h2>
             <p>Android App for Controlling the PhotonLab Smart Light System</p>
             <img class="projectImg" src="/ImgThumbNail/PhotonLab.jpg">
         </button>
-        <button class="projectCard" v-on:click="this.$router.push('/Projects/smartContract');">
+        <button v-if="Other" class="projectCard" v-on:click="this.$router.push('/Projects/smartContract');">
             <h2>Smart Contract Vulnerabilities Detection</h2>
             <p>A Program for Detecting Reentrancy and Unhandled Exceptions</p>
             <img class="projectImg" src="/ImgThumbNail/smart.jpg">
@@ -121,7 +130,38 @@
 
 <script>
 export default {
-    name:"Project"
+    name:"Project",
+    data:function(){
+        return {
+            Astro: true,
+            Game: true,
+            Other: true,
+        }
+    },
+    methods:{
+        selectAstro:function(){
+            this.clearTags();
+            this.Astro = true;
+        },
+        selectGame:function(){
+            this.clearTags();
+            this.Game = true;
+        },
+        selectOther:function(){
+            this.clearTags();
+            this.Other = true;
+        },
+        selectAll:function(){
+            this.Astro = true;
+            this.Game = true;
+            this.Other = true;
+        },
+        clearTags:function(){
+            this.Astro = false;
+            this.Game = false;
+            this.Other = false;
+        }
+    }
 }
 </script>
 
@@ -130,8 +170,8 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-top: 100px;
-    height: 60%;
+    /* margin-top: 100px; */
+    height: 80%;
     overflow-y: scroll;
 
 }
@@ -160,7 +200,7 @@ export default {
 
 .projectCard h3{
     font-size: 15px;
-    color: chartreuse;
+    color:rgb(117, 206, 104);
 }
 
 .projectCard p{
@@ -177,6 +217,42 @@ export default {
     border-left: 1px red solid;
     width:100%;
     
+}
+
+.Tag{
+    background: none;
+    background-color: rgba(0, 0, 0, 0.23);
+    padding: 10px;
+    width: fit-content;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-bottom: red 1px solid;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1.5%;
+    cursor: pointer;
+
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+.Tag:hover{
+    cursor: pointer;
+    background: red;
+    border: red solid 2px;
+}
+
+.Tag:focus{
+    background: red;
+    color: white;
+}
+
+.TagZone{
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
 }
 
 @media only screen and (max-width: 1000px) {

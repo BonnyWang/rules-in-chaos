@@ -73,8 +73,8 @@ export default {
 <style>
 
 #Gallery{
-    margin-top: 100px;
-    height: 60%;
+    /* margin-top: 100px; */
+    height: 80%;
     overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;

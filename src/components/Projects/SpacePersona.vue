@@ -73,8 +73,7 @@ export default {
 }
 
 .projectContent{
-    margin-top: 100px;
-    height: 60%;
+    height: 80%;
     overflow-y: scroll;
     padding: 10px;
     padding-right: 30px;

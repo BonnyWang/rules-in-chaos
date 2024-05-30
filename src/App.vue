@@ -192,6 +192,11 @@ export default {
     border-left: red 1px solid;
     color: red;
   }
+  
+  #NavButton:focus{
+    border-left: red 1px solid;
+    color: red;
+  }
 
   ::-webkit-scrollbar {
     width: 2px;
