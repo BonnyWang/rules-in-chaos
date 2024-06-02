@@ -40,12 +40,6 @@
             <p>Bonny Y. Wang, Alice Pisani</p>
             <img class="projectImg" src="https://cdn.mos.cms.futurecdn.net/vamaoFeP8FDSfCYookG6qK.jpg">
         </button>
-        <button v-if="Game" v-on:click="this.$router.push('/Moonsters');" class="projectCard">
-            <h2>Moonsters Project</h2>
-            <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
-            <p>A virtual reality game prototype of NASA’s VIPER mission </p>
-            <img class="projectImg" src="https://www.etc.cmu.edu/wp-content/uploads/2013/08/logo_LightBackground.png">
-        </button>
 
         <button v-if="Astro" v-on:click="this.$router.push('/DREAMS');" class="projectCard">
             <h2>The DREAMS Project</h2>
@@ -53,23 +47,41 @@
             <p>DaRk mattEr and Astrophysics with Machine learning and Simulations</p>
             <img class="projectImg" src="https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=100w%20100w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=300w%20300w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=500w%20500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=750w%20750w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1000w%201000w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1500w%201500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png">
         </button>
+        <button v-if="Game || Astro" v-on:click="this.$router.push('/Moonsters');" class="projectCard">
+            <h2>Moonsters Project</h2>
+            <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
+            <p>A virtual reality game prototype of NASA’s VIPER mission </p>
+            <img class="projectImg" src="https://www.etc.cmu.edu/wp-content/uploads/2013/08/logo_LightBackground.png">
+        </button>
         <button v-if="Astro" v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
             <h2>Graph Neural Networks for Voids</h2>
             <h3>Still in Progress...</h3>
             <p>Use GNN to Produce Cosmological Inference from Void Properties</p>
             <img class="projectImg" src="/ImgThumbNail/GNN.jpg">
         </button>
-         <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/BeeCareful');">
+            <h2>Bee Careful</h2>
+            <h3>CMU ETC BVW Coursework</h3>
+            <p>An Asymmetric Online Multiplayer Battle Game Where Players Plays as Bees and a Bee Keeper</p>
+            <img class="projectImg" src="/ImgThumbNail/Bee_logo.webp">
+        </button>
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/Bubble');">
+            <h2>Bubble Fantasy</h2>
+            <h3>CMU ETC BVW Coursework</h3>
+            <p>An Enchanting VR Game where Players Manipulate Captivating Bubbles</p>
+            <img class="projectImg" src="/ImgThumbNail/Bubble.webp">
+        </button>
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/Horror');">
+            <h2>Horror Ride</h2>
+            <h3>CMU ETC BVW Coursework</h3>
+            <p>A Theme Park Level Ride Experience where Players Explore a Haunted House through VR and the Motion Chair</p>
+            <img class="projectImg" src="/ImgThumbNail/Horror.webp">
+        </button>
+        <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/catHome');">
             <h2>Home Cat</h2>
             <h3>Available Online</h3>
             <p>A 2D platformer and simulation game about reviving people’s love by delivering cats in a cyberpunk world</p>
             <img class="projectImg" src="/ImgThumbNail/HomeCat.jpg">
-        </button>
-         <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/BVW');">
-            <h2>Building Virtual World</h2>
-            <h3>CMU ETC Coursework</h3>
-            <p>Video game worlds created in just one/two weeks with a variety of hardwares and technologies.</p>
-            <img class="projectImg" src="https://festival.etc.cmu.edu/2023/wp-content/uploads/2023/11/FestivalLogo-small-768x478.png">
         </button>
         <button v-if="Game" class="projectCard" v-on:click="this.$router.push('/Projects/rubiks');">
             <h2>WebGL Rubik's Cube</h2>

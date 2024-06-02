@@ -19,7 +19,9 @@ import DLD from './components/Projects/DLD.vue'
 import purpleVerse from './components/Projects/purpleVerse.vue'
 import GNN from './components/Projects/GNN.vue'
 import rubiks from './components/Projects/rubiks.vue'
-import BVW from './components/Projects/BVW.vue'
+import BeeCareful from './components/Projects/BeeCareful.vue'
+import Bubble from './components/Projects/Bubble.vue'
+import Horror from './components/Projects/Horror.vue'
 
 const routes = [
     { path: "/:catchAll(.*)", component: AboutMe }, 
@@ -39,7 +41,9 @@ const routes = [
     { path: '/Projects/PurpleVerse', component: purpleVerse }, 
     { path: '/Projects/GNN', component: GNN }, 
     { path: '/Projects/rubiks', component: rubiks }, 
-    { path: '/Projects/BVW', component: BVW }, 
+    { path: '/Projects/BeeCareful', component: BeeCareful }, 
+    { path: '/Projects/Bubble', component: Bubble }, 
+    { path: '/Projects/Horror', component: Horror }, 
     { path: '/AboutMe', component: AboutMe },
     { path: '/arXivMLVoid', beforeEnter(to, from, next) {
       // Put the full page URL including the protocol http(s) below
