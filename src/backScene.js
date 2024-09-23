@@ -422,6 +422,15 @@ function toMain(){
     changedSection = true;
     mapp.hideEntrance();
 
+    if(mapp.checkRouteName() === "/Academic"){
+        scene.remove(cutie);
+        scene.remove(asteroidFraction);
+        scene.remove(reals[0]);
+        scene.remove(reals[1]);
+        scene.remove(asteroidBonny);
+        return;
+    }
+
     scene.remove(asteroidBonny);
     scene.remove(reals[0]);
     scene.remove(reals[1]);
