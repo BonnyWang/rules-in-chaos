@@ -28,7 +28,7 @@
             <h2>Machine learning cosmology from void properties</h2>
             <h3>arXiv:2212.06860 
             <br>
-            Published on ApJ</h3>
+            Published in ApJ</h3>
             <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
             <img class="projectImg" src="/ImgThumbNail/web.jpg">
         </button>
@@ -36,7 +36,7 @@
             <h2>Cosmology from one galaxy in voids?</h2>
             <h3>arXiv:2405.04447
                 <br>
-                ApJL Under Revision</h3>
+                Published in ApJL</h3>
             <p>Bonny Y. Wang, Alice Pisani</p>
             <img class="projectImg" src="https://cdn.mos.cms.futurecdn.net/vamaoFeP8FDSfCYookG6qK.jpg">
         </button>

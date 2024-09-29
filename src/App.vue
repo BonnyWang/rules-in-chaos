@@ -12,8 +12,9 @@
             <router-link to="/AboutMe" id="NavButton">About Me</router-link>
             <router-link v-if="!isAcademic" to="/Projects" id="NavButton">Projects</router-link>
             <router-link v-if="!isAcademic" to="/Gallery" id="NavButton">Gallery</router-link>
-            <a id="NavButton" href="https://scholar.google.com/citations?user=gR4oz6sAAAAJ&hl=en" v-if="isAcademic">Publications</a>
-            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">CV</router-link>
+            <router-link v-if="isAcademic" to="/Pub" id="NavButton">Publications</router-link>
+            <!-- <a id="NavButton" href="https://scholar.google.com/citations?user=gR4oz6sAAAAJ&hl=en" v-if="isAcademic">Publications</a> -->
+            <router-link v-if="isAcademic" to="/CV" id="NavButton">CV</router-link>
             <!-- refresh on click -->
             <br>
             <br>

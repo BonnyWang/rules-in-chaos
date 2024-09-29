@@ -6,6 +6,8 @@ import { createRouter, createWebHashHistory} from "vue-router";
 import Gallery from './components/Gallery.vue'
 import AboutMe from './components/AboutMe.vue'
 import Projects from './components/Projects.vue'
+import Pub from './components/Pub.vue'
+import CV from './components/CV.vue';
 import SpacePersona from './components/Projects/SpacePersona.vue'
 import GravityGame from './components/Projects/GravityGame.vue'
 import ChinesePoem from './components/Projects/ChinesePoem.vue'
@@ -28,6 +30,8 @@ const routes = [
     { path: '/Gallery', component: Gallery },
     { path: '/', component: AboutMe }, 
     { path: '/Projects', component: Projects }, 
+    { path: '/Pub', component: Pub }, 
+    { path: '/CV', component: CV },
     { path: '/Projects/SpacePersona', component: SpacePersona }, 
     { path: '/Projects/GravityGame', component: GravityGame }, 
     { path: '/Projects/ChinesePoem', component: ChinesePoem }, 
