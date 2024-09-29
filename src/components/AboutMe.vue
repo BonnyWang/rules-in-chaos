@@ -2,7 +2,7 @@
     <span id="AboutMe">
         <img src="/ImgOriginal/portrait.png" alt="Bonny" id="portrait">
 
-        <div>
+        <div style="height: 100%;">
         <h3>
             <mark class="red">Hello!</mark>
         </h3>
@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style>
+
 #AboutMe{
     margin-top: 100px;
     height: 60%;
