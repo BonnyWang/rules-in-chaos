@@ -10,8 +10,16 @@
         <span id="Navigation">
           <h1 id="siteTitle">WELCOME</h1>
             <router-link to="/AboutMe" id="NavButton">About Me</router-link>
-            <router-link to="/Projects" id="NavButton">Projects</router-link>
-            <router-link to="/Gallery" id="NavButton">Gallery</router-link>
+            <router-link v-if="!isAcademic" to="/Projects" id="NavButton">Projects</router-link>
+            <router-link v-if="!isAcademic" to="/Gallery" id="NavButton">Gallery</router-link>
+            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">Publications</router-link>
+            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">Out Reach</router-link>
+            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">CV</router-link>
+            <!-- refresh on click -->
+            <br>
+            <br>
+            <a class="fakerouter" href="/" v-if="isAcademic">→ To My Other Side </a>
+            <a class="fakerouter" href="/#/Academic" v-if="!isAcademic" v-on:click="toAcademic">→ To My Academic Page </a>
         </span>
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
@@ -38,7 +46,8 @@ export default {
     return {
       loadingProgress: 0,
       loaded: false,
-      firstEnter: true
+      firstEnter: true,
+      isAcademic: false,
     }
   },
   methods:{
@@ -61,18 +70,33 @@ export default {
     },
     hideEntrance(){
       this.firstEnter = false;
+      const rpath = this.checkRouteName();
+      if(rpath ==='/Academic'){
+        this.isAcademic = true;
+      }
+      
     },
     checkRouteName() {
       const rpath = this.$router.currentRoute._value.path;
       return rpath;
+    },
+    toAcademic(){
+      // push the route to academic
+      this.$router
+        .push({ path: '/Academic' })
+        .then(() => { this.$router.go(0) })
     }
   },
   mounted(){
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0,0); 
 
+    // check current path
+    
+
     // this.playMusic();
-  }
+  },
+
 }
 
 </script>
@@ -126,6 +150,17 @@ export default {
     color: #ffeded;
     padding-left: 10%;
     padding-right: 10%;
+  }
+
+  .fakerouter{
+    background: none;
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    
   }
 
   #Welcome
