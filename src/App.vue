@@ -12,14 +12,13 @@
             <router-link to="/AboutMe" id="NavButton">About Me</router-link>
             <router-link v-if="!isAcademic" to="/Projects" id="NavButton">Projects</router-link>
             <router-link v-if="!isAcademic" to="/Gallery" id="NavButton">Gallery</router-link>
-            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">Publications</router-link>
-            <router-link v-if="isAcademic" to="/Gallery" id="NavButton">Out Reach</router-link>
+            <a id="NavButton" href="https://scholar.google.com/citations?user=gR4oz6sAAAAJ&hl=en" v-if="isAcademic">Publications</a>
             <router-link v-if="isAcademic" to="/Gallery" id="NavButton">CV</router-link>
             <!-- refresh on click -->
             <br>
             <br>
-            <a class="fakerouter" href="/" v-if="isAcademic">→ To My Other Side </a>
-            <a class="fakerouter" href="/#/Academic" v-if="!isAcademic" v-on:click="toAcademic">→ To My Academic Page </a>
+            <a class="worldPortal" href="/" v-if="isAcademic">→ To My Other Side </a>
+            <a class="worldPortal" href="/#/Academic" v-if="!isAcademic" v-on:click="toAcademic">→ To My Academic Page </a>
         </span>
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
@@ -152,7 +151,17 @@ export default {
     padding-right: 10%;
   }
 
-  .fakerouter{
+  .fakeRounter{
+    background: none;
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .worldPortal{
     background: none;
     text-decoration: none;
     color: white;
@@ -161,6 +170,10 @@ export default {
     font-size: 20px;
     padding: 10px;
     
+  }
+
+  .worldPortal:hover{
+    color: red;
   }
 
   #Welcome
