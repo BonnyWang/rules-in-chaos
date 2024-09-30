@@ -27,7 +27,7 @@
           </transition>
         </router-view>
     </section>
-    <audio ref="mbgm" controls autoplay loop hidden="true">
+    <audio ref="mbgm" controls loop hidden="true">
       <source src="/bgm.wav">
     Your browser does not support the audio element.
     </audio>
