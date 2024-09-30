@@ -2,7 +2,7 @@
     
     <span id="projectList">
         
-        <h3>CV</h3>
+        <embed src="/CV_Bonny-Y-Wang.pdf" type="application/pdf" width="100%" height="100%" />
     
     </span>
 </template>

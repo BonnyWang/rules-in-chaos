@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ansi-regex": "^6.1.0",
     "core-js": "^3.6.5",
     "three": "^0.133.0",
     "vue": "^3.0.0",

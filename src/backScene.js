@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { Color } from 'three';
+import { PCDLoader } from 'three/examples/jsm/loaders/PCDLoader'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 import mapp from './main';
@@ -64,6 +65,12 @@ const particlesMaterial = new THREE.PointsMaterial({
     size: 0.05
 })
 
+const LLSparticlesMaterial = new THREE.PointsMaterial({
+    color: '#313131',
+    sizeAttenuation: true,
+    size: 0.015
+})
+
 const particlesGeometry = new THREE.BufferGeometry();
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -77,7 +84,7 @@ scene.add( cube );
 
 
 // Load Control
-const modelCount = 4;
+const modelCount = 5;
 let modelLoaded = 0;
 let cutieLoadProgress = 0;
 let asteroidLoadProgress = 0;
@@ -235,6 +242,26 @@ function loadFraction(){
 
         console.error( error );
 
+    } );
+}
+
+let LLSPoints;
+function loadPCD(){
+    const pcdloader = new PCDLoader();
+    pcdloader.load( modelPath + '/dreamParticle.pcd', function ( points ) {
+        LLSPoints = points;
+        // increase the scale of the points
+        let scale = 10;
+        LLSPoints.scale.x = scale;
+        LLSPoints.scale.y = scale;
+        LLSPoints.scale.z = scale;
+
+        LLSPoints.position.y = -scale/2;
+        LLSPoints.position.x = -scale/2;
+        LLSPoints.position.z = -scale/2;
+        LLSPoints.material = LLSparticlesMaterial;
+        
+        checkProgress();
     } );
 }
 
@@ -428,6 +455,9 @@ function toMain(){
         scene.remove(reals[0]);
         scene.remove(reals[1]);
         scene.remove(asteroidBonny);
+        scene.remove(particles);
+
+        scene.add(LLSPoints);
         return;
     }
 
@@ -453,6 +483,7 @@ function initializeScene(){
     loadReal();
     loadCutie();
     loadFraction();
+    loadPCD();
 }
 
 

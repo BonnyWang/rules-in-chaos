@@ -1,30 +1,37 @@
 <template>
     
-    <span id="projectList">
-        
-        <button v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
-            <h2>Machine learning cosmology from void properties</h2>
+    <span id="Pub">
+            <div class="PubList">
+            <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6">Machine learning cosmology from void properties</a>
             <h3>arXiv:2212.06860 
             <br>
             Published in ApJ</h3>
-            <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
-            <img class="projectImg" src="/ImgThumbNail/web.jpg">
-        </button>
-        <button v-on:click="this.$router.push('/arXivVoidGalaxy');" class="projectCard">
-            <h2>Cosmology from one galaxy in voids?</h2>
-            <h3>arXiv:2405.04447
-                <br>
-                Published in ApJL</h3>
-            <p>Bonny Y. Wang, Alice Pisani</p>
-            <img class="projectImg" src="https://cdn.mos.cms.futurecdn.net/vamaoFeP8FDSfCYookG6qK.jpg">
-        </button>
+            <p style="font-size:15px;" > <u>Bonny Y. Wang</u>, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
+            </div>
 
-        <button v-on:click="this.$router.push('/DREAMS');" class="projectCard">
-            <h2>The DREAMS Project</h2>
-            <h3>Core Team Member</h3>
-            <p>DaRk mattEr and Astrophysics with Machine learning and Simulations</p>
-            <img class="projectImg" src="https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=100w%20100w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=300w%20300w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=500w%20500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=750w%20750w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1000w%201000w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1500w%201500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png">
-        </button>
+            <div class="PubList">
+                <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/2041-8213/ad5ffe">Cosmology from one galaxy in voids?</a>
+                <h3>arXiv:2405.04447
+                    <br>
+                    Published in ApJL</h3>
+                <p><u>Bonny Y. Wang</u>, Alice Pisani</p>
+            </div>
+
+            <div class="PubList">
+            <a class="PubTitle" href="https://arxiv.org/abs/2405.00766">Introducing the DREAMS Project: DaRk mattEr and Astrophysics with Machine learning and Simulations</a>
+            <h3>arXiv:2405.00766
+                    <br>
+                    Submitted to ApJ</h3>
+            <p>Jonah C. Rose, Paul Torrey, Francisco Villaescusa-Navarro, Mariangela Lisanti, ... <u>Bonny Y. Wang</u>, et al.</p>
+            </div>
+
+            <div class="PubList">
+            <h2 style="color: red;" >Confined tumbling state as the origin of the excess of slowly rotating asteroids</h2>
+            <h3>
+                Accepted by Nature Astronomy	
+            </h3>
+            <p>Wen-Han Zhou, Patrick Michel, Marco Delbo,Wenchao Wang, <u>Bonny Y. Wang</u>, Josef Durech, Josef Hanu</p>
+            </div>
         
     
     </span>
@@ -37,6 +44,31 @@ export default {
 </script>
 
 <style>
+#Pub{
+    /* margin-top: 100px; */
+    height: 80%;
+    overflow-y: scroll;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-items: center; */
+}
 
+.PubList{
+    padding-top: 20px;
+    height: fit-content;
+    border-bottom: 1px solid white;
+}
+
+.PubTitle{
+    /* same as h2 */
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+
+.PubTitle:hover{
+    text-decoration: underline;
+}
 
 </style>
