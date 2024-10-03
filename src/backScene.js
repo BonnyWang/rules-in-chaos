@@ -9,7 +9,7 @@ const modelPath = "/models/"
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x121212);
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 2, 1000 );
 const renderer = new THREE.WebGLRenderer({alpha: true});
 
 // Wrap the camera to more flexible control
@@ -246,21 +246,24 @@ function loadFraction(){
 }
 
 let LLSPoints;
+LLSPoints = new THREE.Group();
 function loadPCD(){
     const pcdloader = new PCDLoader();
     pcdloader.load( modelPath + '/dreamParticle.pcd', function ( points ) {
-        LLSPoints = points;
+        let astridParticle = points;
         // increase the scale of the points
         let scale = 10;
-        LLSPoints.scale.x = scale;
-        LLSPoints.scale.y = scale;
-        LLSPoints.scale.z = scale;
+        astridParticle.scale.x = scale;
+        astridParticle.scale.y = scale;
+        astridParticle.scale.z = scale;
 
-        LLSPoints.position.y = -scale/2;
-        LLSPoints.position.x = -scale/2;
-        LLSPoints.position.z = -scale/2;
-        LLSPoints.material = LLSparticlesMaterial;
+        astridParticle.position.y = -scale/2;
+        astridParticle.position.x = -scale/2;
+        astridParticle.position.z = -scale/2;
+        astridParticle.material = LLSparticlesMaterial;
         
+        LLSPoints.add(astridParticle);
+
         checkProgress();
     } );
 }
@@ -391,6 +394,8 @@ function baseAnimation(){
     camera.position.y += (parallax.y - camera.position.y)*damping;
 
     cameraGroup.position.y = - scrollY*3 / sizes.height;
+
+    LLSPoints.rotation.y += 0.0001;
 
     //particleMove();
 
