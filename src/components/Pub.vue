@@ -1,13 +1,7 @@
 <template>
     
     <span id="Pub">
-            <div class="PubList">
-            <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6">Machine learning cosmology from void properties</a>
-            <h3>arXiv:2212.06860 
-            <br>
-            Published in ApJ</h3>
-            <p style="font-size:15px;" > <u>Bonny Y. Wang</u>, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
-            </div>
+            
 
             <div class="PubList">
                 <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/2041-8213/ad5ffe">Cosmology from one galaxy in voids?</a>
@@ -15,6 +9,14 @@
                     <br>
                     Published in ApJL</h3>
                 <p><u>Bonny Y. Wang</u>, Alice Pisani</p>
+            </div>
+
+            <div class="PubList">
+                <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6">Machine learning cosmology from void properties</a>
+                <h3>arXiv:2212.06860 
+                <br>
+                     Published in ApJ</h3>
+                 <p style="font-size:15px;" > <u>Bonny Y. Wang</u>, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
             </div>
 
             <div class="PubList">

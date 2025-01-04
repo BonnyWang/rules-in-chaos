@@ -66,7 +66,7 @@ const particlesMaterial = new THREE.PointsMaterial({
 })
 
 const LLSparticlesMaterial = new THREE.PointsMaterial({
-    color: '#313131',
+    color: '#292929',
     sizeAttenuation: true,
     size: 0.015
 })
