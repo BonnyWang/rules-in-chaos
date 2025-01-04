@@ -17,14 +17,14 @@
         <br>
         </div>
         
-        <button v-if="Astro" v-on:click="this.$router.push('/Projects/VRVoids');" class="projectCard">
+        <button v-if="Astro" v-on:click="direct_to_external_url('https://www.scientificamerican.com/article/how-analyzing-cosmic-nothing-might-explain-everything/')" class="projectCard">
             <h2>Data Visualization for Cosmic Voids</h2>
             <h3>Mentioned in <em>Scientific American</em></h3>
             <p>Use MR Technology to Create Immersive Scene for Cosmic Voids</p>
             <img class="projectImg" src="/ImgThumbNail/CosmicVoid.jpg">
         </button>
         
-        <button v-if="Astro" v-on:click="this.$router.push('/arXivMLVoid');" class="projectCard">
+        <button v-if="Astro" v-on:click="direct_to_external_url('https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6')" class="projectCard">
             <h2>Machine learning cosmology from void properties</h2>
             <h3>arXiv:2212.06860 
             <br>
@@ -32,7 +32,7 @@
             <p style="font-size:15px;" >Bonny Y. Wang, Alice Pisani, Francisco Villaescusa-Navarro, Benjamin D. Wandelt </p>
             <img class="projectImg" src="/ImgThumbNail/web.jpg">
         </button>
-        <button v-if="Astro" v-on:click="this.$router.push('/arXivVoidGalaxy');" class="projectCard">
+        <button v-if="Astro" v-on:click="direct_to_external_url('https://iopscience.iop.org/article/10.3847/2041-8213/ad5ffe')" class="projectCard">
             <h2>Cosmology from one galaxy in voids?</h2>
             <h3>arXiv:2405.04447
                 <br>
@@ -41,13 +41,13 @@
             <img class="projectImg" src="https://cdn.mos.cms.futurecdn.net/vamaoFeP8FDSfCYookG6qK.jpg">
         </button>
 
-        <button v-if="Astro" v-on:click="this.$router.push('/DREAMS');" class="projectCard">
+        <button v-if="Astro" v-on:click="direct_to_external_url('https://www.dreams-project.org')" class="projectCard">
             <h2>The DREAMS Project</h2>
             <h3>Core Team Member</h3>
             <p>DaRk mattEr and Astrophysics with Machine learning and Simulations</p>
             <img class="projectImg" src="https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=100w%20100w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=300w%20300w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=500w%20500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=750w%20750w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1000w%201000w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png?format=1500w%201500w,%20https://images.squarespace-cdn.com/content/v1/661990c9787a27148ecfebc3/0afa2277-f4da-46c5-b01f-1e624f313368/single_box_image_TNG300-3_gist_yarg.png">
         </button>
-        <button v-if="Game || Astro" v-on:click="this.$router.push('/Moonsters');" class="projectCard">
+        <button v-if="Game || Astro" v-on:click="direct_to_external_url('https://projects.etc.cmu.edu/moonsters/')" class="projectCard">
             <h2>Moonsters Project</h2>
             <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
             <p>A virtual reality game prototype of NASA’s VIPER mission </p>
@@ -172,6 +172,10 @@ export default {
             this.Astro = false;
             this.Game = false;
             this.Other = false;
+        },
+
+        direct_to_external_url: function(url){
+            window.location.href = url;
         }
     }
 }

@@ -48,33 +48,8 @@ const routes = [
     { path: '/Projects/BeeCareful', component: BeeCareful }, 
     { path: '/Projects/Bubble', component: Bubble }, 
     { path: '/Projects/Horror', component: Horror }, 
-    { path: '/AboutMe', component: AboutMe },
-    { path: '/arXivMLVoid', beforeEnter(to, from, next) {
-      // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://iopscience.iop.org/article/10.3847/1538-4357/aceaf6")
-      } 
-    },
-    { path: '/arXivVoidGalaxy', beforeEnter(to, from, next) {
-      // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://arxiv.org/abs/2405.04447")
-      } 
-    },
-    { path: '/DREAMS', beforeEnter(to, from, next) {
-      // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://www.dreams-project.org")
-      } 
-    },
-    { path: '/Projects/VRVoids', beforeEnter(to, from, next) {
-      // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://www.scientificamerican.com/article/how-analyzing-cosmic-nothing-might-explain-everything/")
-      } 
-    },
-    { path: '/Moonsters', beforeEnter(to, from, next) {
-      // Put the full page URL including the protocol http(s) below
-      window.location.replace("https://projects.etc.cmu.edu/moonsters/")
-      } 
-    },
-]
+    { path: '/AboutMe', component: AboutMe }
+];
 
 const router = createRouter({
     history: createWebHashHistory(),
