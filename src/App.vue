@@ -85,7 +85,12 @@ export default {
       this.$router
         .push({ path: '/Academic' })
         .then(() => { this.$router.go(0) })
+    },
+
+    direct_to_external_url: function(url){
+      window.location.href = url;
     }
+    
   },
   mounted(){
     window.history.scrollRestoration = 'manual';

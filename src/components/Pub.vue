@@ -1,7 +1,11 @@
 <template>
     
     <span id="Pub">
-            
+            <div class="PubList">
+                <a class="PubTitle" href="https://arxiv.org/abs/2503.24304">Gravitational Waves from Massive Black Hole Mergers in ASTRID: Predictions for LISA</a>
+                <h3>arXiv:2503.24304</h3>
+                <p><u>Bonny Y. Wang</u>, Yihao Zhou, William Chen, Nianyi Chen, Tiziana Di Matteo, Rupert Croft, Simeon Bird, Yueying Ni</p>
+            </div>
 
             <div class="PubList">
                 <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/2041-8213/ad5ffe">Cosmology from one galaxy in voids?</a>
@@ -20,17 +24,19 @@
             </div>
 
             <div class="PubList">
-            <a class="PubTitle" href="https://arxiv.org/abs/2405.00766">Introducing the DREAMS Project: DaRk mattEr and Astrophysics with Machine learning and Simulations</a>
+            <a class="PubTitle" href="https://iopscience.iop.org/article/10.3847/1538-4357/adb8e5">Introducing the DREAMS Project: DaRk mattEr and Astrophysics with Machine learning and Simulations</a>
             <h3>arXiv:2405.00766
                     <br>
-                    Submitted to ApJ</h3>
+                    Published in ApJ</h3>
             <p>Jonah C. Rose, Paul Torrey, Francisco Villaescusa-Navarro, Mariangela Lisanti, ... <u>Bonny Y. Wang</u>, et al.</p>
             </div>
 
             <div class="PubList">
-            <h2 style="color: red;" >Confined tumbling state as the origin of the excess of slowly rotating asteroids</h2>
+            <a class="PubTitle" href="https://www.nature.com/articles/s41550-025-02489-8" >Confined tumbling state as the origin of the excess of slowly rotating asteroids</a>
             <h3>
-                Accepted by Nature Astronomy	
+                arXiv:2502.19631
+                <br>
+                Published in Nature Astronomy	
             </h3>
             <p>Wen-Han Zhou, Patrick Michel, Marco Delbo,Wenchao Wang, <u>Bonny Y. Wang</u>, Josef Durech, Josef Hanu</p>
             </div>

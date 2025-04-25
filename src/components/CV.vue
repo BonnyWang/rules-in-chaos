@@ -17,6 +17,13 @@
             <li id="CVList"><strong>Carnegie Mellon University, Pittsburgh, PA</strong><br>Master of Entertainment Technology, Projected May 2025</li>
             <li id="CVList"><strong>The Cooper Union, New York, NY</strong><br>Master of Engineering, Electrical Engineering (Computer Engineering Track), 2022 - 2023<br>Bachelor of Engineering, Electrical Engineering (Computer Engineering Track), 2018 - 2022</li>
         </ul>
+
+        <h2 class="CVTitle">Research Experiences</h2>
+        <ul>
+            <li id="CVList"><strong>The McWilliams Center for Cosmology & Astrophysics</strong>, Pittsburgh, US<br>Research Assistant, Feb 2024 - Present</li>
+            <li id="CVList"><strong>Kavli Institute for the Physics and Mathematics of the Universe</strong>, Kashiwa, Japan<br>Visiting Researcher, Jun 2024 - Aug 2024</li>
+            <li id="CVList"><strong>The Center for Computational Astrophysics, The Flatiron Institute</strong>, New York, US<br>Guest Researcher, Sep 2022 - Mar 2024</li>
+        </ul>
         
         <h2 class="CVTitle">Publications</h2>
         <ul>
@@ -32,13 +39,6 @@
             <li id="CVList">Warm dark matter mass inference</li>
         </ul>
 
-
-        <h2 class="CVTitle">Research Experiences</h2>
-        <ul>
-            <li id="CVList"><strong>The McWilliams Center for Cosmology & Astrophysics</strong>, Pittsburgh, US<br>Research Assistant, Feb 2024 - Present</li>
-            <li id="CVList"><strong>Kavli Institute for the Physics and Mathematics of the Universe</strong>, Kashiwa, Japan<br>Visiting Researcher, Jun 2024 - Aug 2024</li>
-            <li id="CVList"><strong>The Center for Computational Astrophysics, The Flatiron Institute</strong>, New York, US<br>Guest Researcher, Sep 2022 - Mar 2024</li>
-        </ul>
 
         <h2 class="CVTitle">Teaching Experiences</h2>
         <ul>
@@ -74,14 +74,16 @@ export default {
 
 <style>
 #CV{
-    margin-top: 100px;
+    margin-top: 30px;
     height: 80%;
     overflow-y: scroll;
     padding: 10px;
+    background-color: rgba(0, 0, 0, 0.349);
 
 }
 
 #CVList{
+    margin-top: 0px;
     margin-bottom: 10px;
     display: inline-block;
     width: 100%;
@@ -94,6 +96,7 @@ export default {
 .CVTitle{
     font-weight: bold;
     color: red;
+    margin-bottom: 0px;
 }
 
 strong{
@@ -101,16 +104,18 @@ strong{
 }
 #DownloadCV{
     font-size: 25px;
-    color: rgb(255, 0, 255);
-    text-decoration: underline;
+    color: rgb(255, 174, 0);
+    text-decoration: none;
     font-weight: 900;
     padding: 5px;
+    /* border:  2px solid rgb(255, 174, 0); */
+    margin-top: 10px;
     
 }
 
 #DownloadCV:hover{
-    border: 2px solid rgb(255, 0, 255);
-    text-decoration: none;
+    /* border: 3px solid rgb(255, 174, 0); */
+    text-decoration: underline;
 }
 
 </style>
