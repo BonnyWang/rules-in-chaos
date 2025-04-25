@@ -1,8 +1,11 @@
 <template>
     
-    <span id="CV" class="CVSec">
-        
+    <span id="CV" >
+        <div class="CVSec">
         <a id="DownloadCV" href="/CV_Bonny-Y-Wang.pdf" download="CV_Bonny-Wang.pdf">Download the Full CV</a>
+        <br>
+        <br>
+        <a id="DownloadCV" href="https://scholar.google.com/citations?user=gR4oz6sAAAAJ&hl=en">Google Scholar</a>
         <h1> Short CV : </h1>
         <h1 class="CVTitle" >Bonny Y. Wang (Yue Wang)</h1>
         
@@ -62,7 +65,7 @@
         </ul>
         
         <!-- <embed src="/CV_Bonny-Y-Wang.pdf" type="application/pdf" width="100%" height="100%" /> -->
-    
+        </div>
     </span>
 </template>
 
@@ -74,13 +77,20 @@ export default {
 
 <style>
 #CV{
-    margin-top: 30px;
+   
     height: 80%;
     overflow-y: scroll;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.349);
-
+    
 }
+
+.CVSec{
+    /* margin-top: 30px; */
+    height: -webkit-fill-available;
+    padding-top: 20px;
+}
+
 
 #CVList{
     margin-top: 0px;
@@ -108,14 +118,30 @@ strong{
     text-decoration: none;
     font-weight: 900;
     padding: 5px;
-    /* border:  2px solid rgb(255, 174, 0); */
+    border:  2px solid rgb(255, 174, 0);
     margin-top: 10px;
     
 }
 
 #DownloadCV:hover{
-    /* border: 3px solid rgb(255, 174, 0); */
-    text-decoration: underline;
+    border: 4px solid rgb(255, 174, 0);
+    /* font-weight: bolder; */
+    /* text-decoration: underline; */
+}
+
+@media only screen and (max-width: 1000px) {
+    .CVSec{
+        margin-top: 8% !important;
+        height: -webkit-fill-available;
+        overflow-y: scroll;
+        background-color: rgba(0, 0, 0, 0.349);
+
+
+    }
+
+    #CV{
+        background-color: transparent;
+    }
 }
 
 </style>
