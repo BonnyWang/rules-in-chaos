@@ -2,8 +2,19 @@
     
     <span id="Pub">
             <div class="PubList">
+                <a class="PubTitle" href="https://arxiv.org/abs/2507.20378">Set-based Implicit Likelihood Inference of Galaxy Cluster Mass</a>
+                <h3>arXiv:2507.20378
+                    <br>
+                    Spotlight talk at ICML-colocated ML4Astro 2025 workshop
+                </h3>
+                <p><u>Bonny Y. Wang</u>, Leander Thiele</p>
+            </div>
+            <div class="PubList">
                 <a class="PubTitle" href="https://arxiv.org/abs/2503.24304">Gravitational Waves from Massive Black Hole Mergers in ASTRID: Predictions for LISA</a>
-                <h3>arXiv:2503.24304</h3>
+                <h3>arXiv:2503.24304
+                    <br>
+                    Accepted by ApJ
+                </h3>
                 <p><u>Bonny Y. Wang</u>, Yihao Zhou, William Chen, Nianyi Chen, Tiziana Di Matteo, Rupert Croft, Simeon Bird, Yueying Ni</p>
             </div>
 

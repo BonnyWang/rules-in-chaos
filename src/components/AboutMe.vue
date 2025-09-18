@@ -7,20 +7,20 @@
                 <mark class="red">Hello!</mark>
             </h3>
             <h3>
-                My name is <mark class="red"> 博尼  (Bonny Y. Wang)</mark> or 汪玥 (Yue Wang), a grad student at <mark class="red">Carnegie Mellon University</mark> in Pittsburgh and will be starting my PhD in Astronomy and Astrophysics at <mark class="red">University of Chicago</mark> in Fall 2025.
+                My name is <mark class="red"> 博尼  (Bonny Y. Wang)</mark> or 汪玥 (Yue Wang), a grad student in Astronomy & Astrophysics at <mark class="red">The University of Chicago</mark>. Previously, I was at the Flatiron Insititute (CCA), IPMU and CMU.
             </h3>
             <h3>
-                I am a <mark class="red">researcher</mark>, a <mark class="red">developer</mark> and a <mark class="red">practicing astrophysicist</mark>!
+                I am a <mark class="red">researcher</mark>, a <mark class="red">developer</mark> and a <mark class="red">practicing astrophysicist</mark>! 
             </h3>
             <h3>
                 Currently, my <mark class="red">research focuses on</mark> using machine learning methods to study the Large Scale Structure of the Universe. I am insterested in understanding the formation and evolution of cosmic structure, and how they can be used to probe the fundamental physics of the Universe.
             </h3>
             <h3>
-                In addition, I’m deeply passionate about <mark class="red">scientific outreach</mark> because I didn’t have many opportunities to learn about astrophysics or research until later in my life. In fact, my first exposure to astro research was through my video game development internship! This unique experience has inspired me to spend my current Master's studies on creating immersive experiences and interactive games for astronomy. I truly hope to encourage others to explore the wonders of astronomy and science in a more engaging and accessible way.
+                In addition, I’m deeply passionate about <mark class="red">scientific outreach</mark> because I didn’t have many opportunities to learn about astrophysics or research until later in my life. In fact, my first exposure to astro research was through my video game development internship! This unique experience has inspired me to spend my previous Master's studies at CMU on creating immersive experiences and interactive games for astronomy. I hope to encourage others to explore the wonders of astronomy and science in a more engaging and accessible way.
             </h3>
             <br>
             <h3>
-            If you have any questions or want to chat, feel free to reach me at <mark style="color:purple">bonnyw@uchicago.edu</mark>!
+            If you have any questions or want to chat, feel free to reach me at <mark style="color:red">bonnyw@uchicago.edu</mark>!
             </h3>
         </div>
         <div v-else style="height: fit-content;">
@@ -29,21 +29,21 @@
             <mark class="red">博尼 (Bonny Y. Wang) / 汪玥 (Yue Wang)</mark>
         </h3>
         <h3>
-            Location: Pittsburgh, PA
+            Location: Chicago, IL
         </h3>
         <h3>
-            Bonny Y. Wang is a <mark class="red">researcher, a game developer and a practicing astrophysicist</mark>, with a deep passion for merging astrophysics and interactive entertainment. 
+            Bonny Y. Wang is <mark class="red">a researcher, a game developer and a practicing astrophysicist</mark>, with a deep passion for merging astrophysics and interactive entertainment. 
         </h3>
         <h3>
-            She is graduating with a Master's degree of Entertainment Technology at <mark class="red">Carnegie Mellon University</mark> and holds a Bachelor's degree of Engineering in Electrical Engineering from <mark class="red">The Cooper Union</mark>. In Fall 2025, she will be starting her PhD in Astronomy and Astrophysics at <mark class="red">University of Chicago</mark>.
+            She is currently a grad student in Astronomy & Astrophysics at <mark class="red">University of Chicago</mark> and holds a Master's degree in Entertainment Technology from <mark class="red">Carnegie Mellon University</mark> and a Bachelor's degree of Engineering in Electrical and Computer Engineering from <mark class="red">The Cooper Union</mark>. Her diverse academic background equips her with a unique blend of skills in both scientific research and creative development.
         </h3>
         <h3>
-            Bonny aims to integrate her love for astronomy and gaming, developing educational and immersive experiences that inspire curiosity about the cosmos. She believes that the engaging nature of games can make complex astronomical concepts accessible, bridging the gap between entertainment and education.
+            Bonny aims to integrate her love for astronomy and gaming, developing educational and immersive experiences that inspire curiosity about the cosmos. She believes being fun is the fundamental driving force for learning and the engaging nature of games can make complex astronomical ideas accessible, bridging entertainment and education.
         </h3>
         <h3>
-           <mark class="red">Contact:</mark>
+           <mark  style="color: purple">Contact:</mark>
         </h3>
-        <h3 style="color:purple">
+        <h3  style="color:red">
            bonnyw@uchicago.edu
         </h3>
 

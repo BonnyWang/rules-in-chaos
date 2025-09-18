@@ -51,7 +51,7 @@
             <h2>Moonsters Project</h2>
             <h3>Helped Moonshot Museum to secure the 2024 NASA grant for STEM Education</h3>
             <p>A virtual reality game prototype of NASA’s VIPER mission </p>
-            <img class="projectImg" src="https://www.etc.cmu.edu/wp-content/uploads/2013/08/logo_LightBackground.png">
+            <img class="projectImg" src="https://projects.etc.cmu.edu/moonsters/wp-content/uploads/2024/01/logo_Small_DarkBackground.png">
         </button>
         <button v-if="Astro" v-on:click="this.$router.push('/Projects/GNN');" class="projectCard">
             <h2>Graph Neural Networks for Voids</h2>
